@@ -71,5 +71,16 @@ public class BabyDragonTest {
 		final BabyDragon drako = new BabyDragon(template, PlayerTestHelper.createPlayer("bob"));
 		assertThat(drako.getFoodNames(), is(foods));
 	}
+	
+	/**
+	 * Tests babyDragon weight
+	 */
+	@Test
+	public void shouldReturnBabyDragonWeightOf1() {
+		BabyDragon drako = new BabyDragon();
+		int expectedWeight = 1;
+		int actualWeight = drako.getWeight();
+		assertThat(actualWeight, is (expectedWeight));
+	}
 
 }
