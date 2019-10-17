@@ -61,7 +61,6 @@ public class EquipAction extends EquipmentAction {
 		}
 
 		logger.debug("Equip action agreed");
-
 		// looks good
 		if (source.moveTo(dest, player)) {
 			int amount = source.getQuantity();

@@ -165,7 +165,24 @@ class DestinationObject extends MoveableObject {
 				logger.debug("Unreachable slot");
 				return false;
 			}
-
+			// Check if it is a keyring
+			// then check if it ia lucky charm
+			// then if Full or quantity of lucky charms more than one 
+			// send false and don't add charms to key ring
+			// else if still available and lucky charmn is one send true
+			if (entity instanceof StackableItem)
+			{
+				if (rpslot.getContentSlotName().equals("keyring"))
+				{
+					if (((StackableItem)entity).getItemSubclass().equals("lucky_charm"))
+					{
+						if (rpslot.isFull() || ((StackableItem)entity).getQuantity() > 1)
+							return false;
+						else
+							return true;
+					}// if
+				} // if 
+			} // if 
 			if (rpslot.isFull()) {
 				boolean isStackable = false;
 				// is the entity stackable
@@ -328,15 +345,20 @@ class DestinationObject extends MoveableObject {
 					if (object instanceof StackableItem) {
 						// found another stackable
 						final StackableItem other = (StackableItem) object;
-						if (other.isStackable(stackEntity)) {
-							new ItemLogger().merge(player, stackEntity, other);
-
-							// other is the same type...merge them
-							other.add(stackEntity);
-							entity = null;
-							// do not process the entity further
-							break;
-						}
+						// edited this if condition and added another if
+						// Check if the three if conditions in the preCheck() method are not holding here.
+						if (other.isStackable(stackEntity))
+							if (!(entity instanceof StackableItem && ((EntitySlot) rpslot).getContentSlotName().equals("keyring")&& !((StackableItem)entity).getItemSubclass().equals("lucky_charm"))) 
+							{
+							
+								new ItemLogger().merge(player, stackEntity, other);
+	
+								// other is the same type...merge them
+								other.add(stackEntity);
+								entity = null;
+								// do not process the entity further
+								break;
+							}
 					}
 				}
 			}

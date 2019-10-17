@@ -650,4 +650,67 @@ public class EquipmentActionTest  extends ZoneAndPlayerTestImpl {
 		assertFalse(player.isEquipped("cheese"));
 		assertTrue(player2.isEquipped("cheese"));
 	}
+	
+	@Test
+	public void testOfNoStackOfLuckycharmsOnKeyring()
+	{
+		StendhalRPZone localzone = new StendhalRPZone("testzone", 20, 20);
+		SingletonRepository.getRPWorld().addRPZone(localzone);
+		final Player player = PlayerTestHelper.createPlayer("bob");
+		StackableItem item = (StackableItem) SingletonRepository.getEntityManager().getItem("lucky charm");
+		
+		// lucky charms set to 3 
+		// It should pass as lucky charms are more than 1 so bag will have 3 lucky charms
+		item.setQuantity(3);
+		player.setFeature("keyring", true);
+		player.equip("bag", item);
+		localzone.add(player);
+		assertTrue(player.isEquipped("lucky charm"));
+		
+		final EquipmentAction action = new EquipAction();		
+		RPAction equip = new RPAction();
+		action.onAction(player, equip);
+		equip.put("type", "equip");
+		equip.put(EquipActionConsts.BASE_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.BASE_SLOT, "bag");
+		equip.put(EquipActionConsts.BASE_ITEM, item.getID().getObjectID());
+
+		equip.put(EquipActionConsts.TARGET_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.TARGET_SLOT, "keyring");
+		action.onAction(player, equip);
+		assertTrue(player.isEquipped("lucky charm"));
+		assertTrue("It should return true, as there are 3 lucky charms in bag", ((StackableItem)player.getSlot("bag").getFirst()).getName().equals("lucky charm"));
+		assertTrue("Check that 3 lucky charms in bag ", ((StackableItem)player.getSlot("bag").getFirst()).getQuantity() == 3);
+		
+	}
+	@Test
+	public void testStackOfLuckycharmsOnKeyringIsCorrect()
+	{
+		StendhalRPZone localzone = new StendhalRPZone("testzone", 20, 20);
+		SingletonRepository.getRPWorld().addRPZone(localzone);
+		final Player player = PlayerTestHelper.createPlayer("bob");
+		StackableItem item = (StackableItem) SingletonRepository.getEntityManager().getItem("lucky charm");
+		// lucky charms set to 1
+		// It should pass as there is only 1 lucky charm in the bag so it will be transferred successfully to keyring
+		item.setQuantity(1);
+		player.setFeature("keyring", true);
+		player.equip("bag", item);
+		localzone.add(player);
+		assertTrue(player.isEquipped("lucky charm"));
+		
+		final EquipmentAction action = new EquipAction();		
+		RPAction equip = new RPAction();
+		action.onAction(player, equip);
+		equip.put("type", "equip");
+		equip.put(EquipActionConsts.BASE_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.BASE_SLOT, "bag");
+		equip.put(EquipActionConsts.BASE_ITEM, item.getID().getObjectID());
+
+		equip.put(EquipActionConsts.TARGET_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.TARGET_SLOT, "keyring");
+		
+		action.onAction(player, equip);
+		assertTrue("Check that 1 lucky charm in keyring ", ((StackableItem)player.getSlot("keyring").getFirst()).getQuantity() == 1);
+		assertTrue(player.isEquippedItemInSlot("keyring", "lucky charm"));
+	}
 }
