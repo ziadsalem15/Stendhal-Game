@@ -139,7 +139,7 @@ public class RainbowBeansTest {
 
 		// return too soon
 		en.step(player, "hi");
-		assertEquals("Alright? I hope you don't want more beans. You can't take more of that stuff for at least another 60 minutes.", getReply(npc));
+		assertEquals("Alright? I hope you don't want more beans. You can't take more of that stuff for at least another 1 hour.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Bye.", getReply(npc));
 
