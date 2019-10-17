@@ -105,15 +105,13 @@ public class EmotionCrystals extends AbstractQuest {
 
 		List<String> gatheredCrystals = new ArrayList<String>();
 		boolean hasAllCrystals = true;
-		int n = 0;
-
+		
 		for (String color : crystalColors) {
-			if (player.isQuestInState(QUEST_SLOT, OFFSET_SUCCESS_MARKER + n, "riddle_solved")) {
+			if (player.isEquipped(color + " emotion crystal")) {
 				gatheredCrystals.add(color + " emotion crystal");
 			} else {
 				hasAllCrystals = false;
 			}
-			n++;
 		}
 
 		if (!gatheredCrystals.isEmpty()) {
