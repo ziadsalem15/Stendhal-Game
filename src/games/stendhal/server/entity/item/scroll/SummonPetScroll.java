@@ -92,7 +92,25 @@ public class SummonPetScroll extends Scroll {
 			return false;
 		}
 
-		String type = getInfoString().replaceAll("_", " ");
+		String descriptionS = getInfoString().replaceAll("_", " ");
+		String type = null;
+		String[] petDetails = null;
+		if( descriptionS.contains("baby dragon"))
+		{
+			type = "baby dragon";
+			petDetails = descriptionS.split(" ",9);
+		}	
+		if( descriptionS.contains("cat"))
+		{
+			type = "cat";
+			petDetails = descriptionS.split(" ",8);
+		}	
+		if( descriptionS.contains("purple dragon"))
+		{
+			type = "purple dragon";
+			petDetails = descriptionS.split(" ",9);
+		}	
+		
 		if (type == null) {
 			// default to cat, if no other type is specified
 			type = "cat";
@@ -103,12 +121,36 @@ public class SummonPetScroll extends Scroll {
 		switch (type) {
 		case "cat":
 			pet = new Cat(player);
+			pet.setName(petDetails[0]);
+			pet.setTitle(petDetails[1]);
+			pet.setHP(Integer.parseInt(petDetails[2]));
+			pet.setBaseHP(Integer.parseInt(petDetails[3]));
+			pet.setXP(Integer.parseInt(petDetails[4]));
+			pet.setWeight(Integer.parseInt(petDetails[5]));
+			pet.setAtk(Integer.parseInt(petDetails[6]));
+			pet.setDef(Integer.parseInt(petDetails[7]));
 			break;
 		case "baby dragon":
 			pet = new BabyDragon(player);
+			pet.setName(petDetails[0]+" "+petDetails[1]);
+			pet.setTitle(petDetails[2]);
+			pet.setHP(Integer.parseInt(petDetails[3]));
+			pet.setBaseHP(Integer.parseInt(petDetails[4]));
+			pet.setXP(Integer.parseInt(petDetails[5]));
+			pet.setWeight(Integer.parseInt(petDetails[6]));
+			pet.setAtk(Integer.parseInt(petDetails[7]));
+			pet.setDef(Integer.parseInt(petDetails[8]));
 			break;
 		case "purple dragon":
 			pet = new PurpleDragon(player);
+			pet.setName(petDetails[0]+" "+petDetails[1]);
+			pet.setTitle(petDetails[2]);
+			pet.setHP(Integer.parseInt(petDetails[3]));
+			pet.setBaseHP(Integer.parseInt(petDetails[4]));
+			pet.setXP(Integer.parseInt(petDetails[5]));
+			pet.setWeight(Integer.parseInt(petDetails[6]));
+			pet.setAtk(Integer.parseInt(petDetails[7]));
+			pet.setDef(Integer.parseInt(petDetails[8]));
 			break;
 		default:
 			// Didn't match a known pet type

@@ -47,6 +47,7 @@ public class BabyDragon extends Pet {
 		DEF = 40;
 		XP = 100;
 		baseSpeed = 0.9;
+		weight = 1;
 
 		setAtk(ATK);
 		setDef(DEF);
