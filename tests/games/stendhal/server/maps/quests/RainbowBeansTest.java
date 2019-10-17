@@ -44,6 +44,7 @@ public class RainbowBeansTest {
 	private Engine en;
 
 	private String questSlot;
+	private String money;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -94,9 +95,9 @@ public class RainbowBeansTest {
 		en.step(player, "hi");
 		assertEquals("SHHH! Don't want all n' sundry knowin' wot I #deal in.", getReply(npc));
 		en.step(player, "deal");
-		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 2000 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
+		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 10 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
 		en.step(player, "no");
-		assertEquals("Aight, ain't for everyone. Anythin else you want, you say so.", getReply(npc));
+		assertEquals("Alright, ain't for everyone. Anything else you want, you say so.", getReply(npc));
 		en.step(player, "help");
 		assertEquals("To be honest mate I can't help you with much, you're better off in the city for that.", getReply(npc));
 		en.step(player, "quest");
@@ -115,18 +116,18 @@ public class RainbowBeansTest {
 		en.step(player, "hi");
 		assertEquals("SHHH! Don't want all n' sundry knowin' wot I #deal in.", getReply(npc));
 		en.step(player, "deal");
-		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 2000 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
+		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 10 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
 		en.step(player, "yes");
 		assertEquals("Scammer! You don't have the cash.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Bye.", getReply(npc));
 
-		PlayerTestHelper.equipWithMoney(player, 2000);
+		PlayerTestHelper.equipWithMoney(player, 10);
 
 		en.step(player, "hi");
 		assertEquals("SHHH! Don't want all n' sundry knowin' wot I #deal in.", getReply(npc));
 		en.step(player, "deal");
-		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 2000 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
+		assertEquals("Nosy, aint yer? I deal in rainbow beans. You take some, and who knows where the trip will take yer. It'll cost you 10 money. And remember pal, it can end up faster than ya wanted! Risky business ya know! So, want to buy some?", getReply(npc));
 		en.step(player, "yes");
 		assertEquals("Alright, here's the beans. Once you take them, you come down in about 30 minutes. And if you get nervous up there, hit one of the green panic squares to take you back here.", getReply(npc));
 		en.step(player, "bye");
@@ -138,7 +139,7 @@ public class RainbowBeansTest {
 
 		// return too soon
 		en.step(player, "hi");
-		assertEquals("Alright? I hope you don't want more beans. You can't take more of that stuff for at least another 6 hours.", getReply(npc));
+		assertEquals("Alright? I hope you don't want more beans. You can't take more of that stuff for at least another 60 minutes.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Bye.", getReply(npc));
 
@@ -148,12 +149,12 @@ public class RainbowBeansTest {
 		en.step(player, "hi");
 		assertEquals("Oi, you. Back for more rainbow beans?", getReply(npc));
 		en.step(player, "no");
-		assertEquals("Aight, ain't for everyone. Anythin else you want, you say so.", getReply(npc));
+		assertEquals("Alright, ain't for everyone. Anything else you want, you say so.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Bye.", getReply(npc));
 
 		// repeat quest
-		PlayerTestHelper.equipWithMoney(player, 2000);
+		PlayerTestHelper.equipWithMoney(player, 10);
 		en.step(player, "hi");
 		assertEquals("Oi, you. Back for more rainbow beans?", getReply(npc));
 		en.step(player, "yes");
