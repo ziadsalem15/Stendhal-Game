@@ -49,23 +49,31 @@ public class SummonPetScrollTest extends QuestHelper {
     BabyDragon drako = new BabyDragon(bob);
     
      BlankPetScroll blank_scroll = (BlankPetScroll) SingletonRepository.getEntityManager().getItem("blank pet scroll");
-   // BlankPetScroll blank_scroll  = (BlankPetScroll)ItemTestHelper.createItem("blank pet scroll");
-    //BlankPetScroll blank_scroll = new BlankPetScroll("blank_scroll","blank pet scroll","scroll",null);
- 
+  
  
     
-    drako.setName("drako");
+    drako.setName("baby dragon");
+    drako.setTitle("drako");
     drako.setAtk(450);
+    drako.setDef(450);
     drako.setBaseHP(450);
+    drako.setHP(450);
+    drako.setXP(200);
+    drako.setWeight(5);
+    
     bob.setPet(drako);
     blank_scroll.useScroll(bob);
     
     SummonPetScroll summon_scroll = (SummonPetScroll) bob.getFirstEquipped("summon pet scroll"); 
      summon_scroll.useScroll(bob);
     
-    assertThat(bob.getPet().getName(), is("drako"));
+    assertThat(bob.getPet().getTitle(), is("drako"));
     assertThat(bob.getPet().getAtk(), is(450));
     assertThat(bob.getPet().getBaseHP(), is(450));
+    assertThat(bob.getPet().getHP(), is(450));
+    assertThat(bob.getPet().getDef(), is(450));
+    assertThat(bob.getPet().getXP(), is(200));
+    assertThat(bob.getPet().getWeight(), is(5));
     
 	
 }
