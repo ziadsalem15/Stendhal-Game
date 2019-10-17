@@ -113,6 +113,7 @@ public class EmotionCrystals extends AbstractQuest {
 			} else {
 				hasAllCrystals = false;
 			}
+			n++;
 		}
 
 		if (!gatheredCrystals.isEmpty()) {
