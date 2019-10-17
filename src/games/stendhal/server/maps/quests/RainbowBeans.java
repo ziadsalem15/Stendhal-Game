@@ -80,9 +80,9 @@ public class RainbowBeans extends AbstractQuest {
 
 	private static final int REQUIRED_LEVEL = 30;
 
-	private static final int REQUIRED_MONEY = 2000;
+	private static final int REQUIRED_MONEY = 10;
 
-	private static final int REQUIRED_MINUTES = 6 * 60;
+	private static final int REQUIRED_MINUTES = 60;
 
 	private static final String QUEST_SLOT = "rainbow_beans";
 
@@ -194,7 +194,7 @@ public class RainbowBeans extends AbstractQuest {
 			ConversationPhrases.NO_MESSAGES,
 			null,
 			ConversationStates.ATTENDING,
-			"Aight, ain't for everyone. Anythin else you want, you say so.",
+			"Alright, ain't for everyone. Anything else you want, you say so.",
 			null);
 
 		// player says 'deal' or asks about beans when NPC is ATTENDING, not

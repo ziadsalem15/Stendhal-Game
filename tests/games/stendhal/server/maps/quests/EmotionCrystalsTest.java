@@ -13,8 +13,8 @@ import org.junit.Test;
 
 import games.stendhal.server.core.engine.SingletonRepository;
 import games.stendhal.server.core.engine.StendhalRPZone;
-import games.stendhal.server.entity.item.Item;
-import games.stendhal.server.entity.mapstuff.chest.Chest;
+//import games.stendhal.server.entity.item.Item;
+//import games.stendhal.server.entity.mapstuff.chest.Chest;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.fsm.Engine;
 import games.stendhal.server.entity.player.Player;
@@ -141,15 +141,5 @@ public class EmotionCrystalsTest {
 		//Check if travel log states as yellow crystal being found after dropping it.
 		player.drop("yellow emotion crystal");
 		assertEquals(history, quest.getHistory(player));
-		
-		//Check if travel log states as purple crystal being found after storing it in a chest.
-				final Chest chest = new Chest();
-				Item purpleCrystal = SingletonRepository.getEntityManager().getItem("purple emotion crystal");
-				chest.add(purpleCrystal);
-				assertEquals(history, quest.getHistory(player));
-				
-				//Check if travel log states as purple crystal being found after equipping it from the chest.
-				player.equip("bag", purpleCrystal);
-				assertEquals(history, quest.getHistory(player));	
 	}
 }
