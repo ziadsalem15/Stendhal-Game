@@ -43,7 +43,7 @@ public class Cat extends Pet {
 	void setUp() {
 		HP = 200;
 		// each chicken or fish would give +5 HP
-		incHP = 4;
+		incHP = 4; 
 		ATK = 10;
 		DEF = 30;
 		XP = 100;
