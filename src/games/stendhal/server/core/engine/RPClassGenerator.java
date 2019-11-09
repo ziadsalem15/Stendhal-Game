@@ -207,9 +207,6 @@ public class RPClassGenerator {
 		if (!RPClass.hasRPClass("sheep")) {
 			Sheep.generateRPClass();
 		}
-		if (!RPClass.hasRPClass("smallmonkey")) {
-			SmallMonkey.generateRPClass();
-		}
 		if (!RPClass.hasRPClass("pet")) {
 			Pet.generateRPClass();
 		}
@@ -221,6 +218,9 @@ public class RPClassGenerator {
 		}
 		if (!RPClass.hasRPClass("purple_dragon")) {
 			PurpleDragon.generateRPClass();
+		}
+		if (!RPClass.hasRPClass("smallmonkey")) {
+			SmallMonkey.generateRPClass();
 		}
 
 		// PassiveEntityRespawnPoint sub-class
