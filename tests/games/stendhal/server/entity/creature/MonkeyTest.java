@@ -26,7 +26,7 @@ import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
 import utilities.PlayerTestHelper;
-import utilities.RPClass.BabyDragonTestHelper;
+import utilities.RPClass.MonkeyTestHelper;
 
 public class MonkeyTest {
 

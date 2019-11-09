@@ -12,7 +12,7 @@
  ***************************************************************************/
 package utilities.RPClass;
 
-import games.stendhal.server.entity.creature.BabyDragon;
+import games.stendhal.server.entity.creature.Monkey;
 import marauroa.common.game.RPClass;
 
 public class MonkeyTestHelper {
