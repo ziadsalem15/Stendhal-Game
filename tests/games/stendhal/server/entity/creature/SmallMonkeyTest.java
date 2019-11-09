@@ -14,7 +14,6 @@ package games.stendhal.server.entity.creature;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,13 +25,13 @@ import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
 import utilities.PlayerTestHelper;
-import utilities.RPClass.MonkeyTestHelper;
+import utilities.RPClass.SmallMonkeyTestHelper;
 
-public class MonkeyTest {
+public class SmallMonkeyTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MonkeyTestHelper.generateRPClasses();
+		SmallMonkeyTestHelper.generateRPClasses();
 		MockStendlRPWorld.get();
 	}
 
@@ -42,21 +41,21 @@ public class MonkeyTest {
 	 * Tests for monkey.
 	 */
 	@Test
-	public void testMonkey() {
-		final Monkey malfoy = new Monkey();
+	public void testSmallMonkey() {
+		final SmallMonkey malfoy = new SmallMonkey();
 		assertThat(malfoy.getFoodNames(), is(foods));
 	}
 
 	/**
-	 * Tests for monkeyPlayer.
+	 * Tests for smallMonkeyPlayer.
 	 */
 	@Test
-	public void testMonkeyPlayer() {
+	public void testSmallMonkeyPlayer() {
 
 		final StendhalRPZone zone = new StendhalRPZone("zone");
 		final Player bob = PlayerTestHelper.createPlayer("bob");
 		zone.add(bob);
-		final Monkey malfoy = new Monkey(bob);
+		final SmallMonkey malfoy = new SmallMonkey(bob);
 
 		assertThat(malfoy.getFoodNames(), is(foods));
 	}
@@ -68,8 +67,18 @@ public class MonkeyTest {
 	public void testMonkeyRPObjectPlayer() {
 		RPObject template = new RPObject();
 		template.put("hp", 30);
-		final Monkey malfoy = new Monkey(template, PlayerTestHelper.createPlayer("bob"));
+		final SmallMonkey malfoy = new SmallMonkey(template, PlayerTestHelper.createPlayer("bob"));
 		assertThat(malfoy.getFoodNames(), is(foods));
 	}
+	
+	/**
+	 * Tests getCloseTo method.
+	 */
+	@Test
+	public void testGetCloseTo() {
+
+	}
+	
+    
 
 }

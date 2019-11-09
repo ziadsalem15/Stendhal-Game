@@ -10,10 +10,10 @@ import marauroa.common.game.RPClass;
 import marauroa.common.game.RPObject;
 import marauroa.common.game.SyntaxException;
 
-public class Monkey extends Pet {
+public class SmallMonkey extends Pet {
 
 	/** the logger instance. */
-	private static final Logger logger = Logger.getLogger(Monkey.class);
+	private static final Logger logger = Logger.getLogger(SmallMonkey.class);
 
 	@Override
 	void setUp() {
@@ -33,8 +33,8 @@ public class Monkey extends Pet {
 
 	public static void generateRPClass() {
 		try {
-			final RPClass monkey = new RPClass("monkey");
-			monkey.isA("pet");
+			final RPClass smallmonkey = new RPClass("smallmonkey");
+			smallmonkey.isA("pet");
 		} catch (final SyntaxException e) {
 			logger.error("cannot generate RPClass", e);
 		}
@@ -43,7 +43,7 @@ public class Monkey extends Pet {
 	/**
 	 * Creates a new wild Monkey.
 	 */
-	public Monkey() {
+	public SmallMonkey() {
 		this(null);
 	}
 
@@ -51,12 +51,12 @@ public class Monkey extends Pet {
 	 * Creates a new baby dragon that may be owned by a player.
 	 * @param owner The player who should own the monkey
 	 */
-	public Monkey(final Player owner) {
+	public SmallMonkey(final Player owner) {
 		super();
 		setOwner(owner);
 		setUp();
-		setRPClass("monkey");
-		put("type", "monkey");
+		setRPClass("smallmonkey");
+		put("type", "smallmonkey");
 
 		if (owner != null) {
 			// add pet to zone and create RPObject.ID to be used in setPet()
@@ -75,10 +75,10 @@ public class Monkey extends Pet {
 	 * @param owner
 	 *            The player who should own the monkey
 	 */
-	public Monkey(final RPObject object, final Player owner) {
+	public SmallMonkey(final RPObject object, final Player owner) {
 		super(object, owner);
-		setRPClass("monkey");
-		put("type", "monkey");
+		setRPClass("smallmonkey");
+		put("type", "smallmonkey");
 		update();
 	}
 

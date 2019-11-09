@@ -12,20 +12,18 @@
  ***************************************************************************/
 package utilities.RPClass;
 
-import games.stendhal.server.entity.creature.Monkey;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
 import marauroa.common.game.RPClass;
 
-public class MonkeyTestHelper {
+public class SmallMonkeyTestHelperTest {
 
-
-public static void generateRPClasses() {
-
-		PetTestHelper.generateRPClasses();
-
-		if (!RPClass.hasRPClass("monkey")) {
-			Monkey.generateRPClass();
-		}
-
+	@Test
+	public void testGenerateRPClasses() {
+		SmallMonkeyTestHelper.generateRPClasses();
+		assertTrue(RPClass.hasRPClass("monkey"));
 	}
 
 }
