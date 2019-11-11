@@ -79,11 +79,13 @@ public class SmallMonkeyTest {
 	 */
 	@Test
 	public void testGetCloseNPC() {
-		//final StendhalRPZone zone = new StendhalRPZone("zone");
+		final StendhalRPZone zone = new StendhalRPZone("zone");
 		final Creature steve = new Creature(); 
 		final SmallMonkey malfoy = new SmallMonkey();
-		expect(malfoy.getPerceptionRange()).andReturn(5);
-		expect(malfoy.getNearestEnemy(7)).andReturn(steve);
+		zone.add(steve);
+		zone.add(malfoy);
+		expect(malfoy.getNearestTarget(malfoy.getPerceptionRange())).andReturn(steve);
+		malfoy.logic();
 		assertTrue(malfoy.nextTo(steve));
 	}
 	
