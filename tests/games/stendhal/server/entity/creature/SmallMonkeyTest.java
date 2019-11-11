@@ -88,6 +88,9 @@ public class SmallMonkeyTest {
 		zone.add(steve);
 		zone.add(keith);
 		zone.add(malfoy);
+		malfoy.setPosition(0, 0);
+		keith.setPosition(10, 10);
+		steve.setPosition(1, 1);
 		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
 		malfoy.logic();
 		assertTrue(malfoy.nextTo(steve));
@@ -100,12 +103,17 @@ public class SmallMonkeyTest {
 	public void testGetCloseNPCPlayer() {
 		MockStendhalRPRuleProcessor.get();
 		final StendhalRPZone zone = new StendhalRPZone("zone");
-		final RPEntity steve = new Creature();
+		final RPEntity steve = PlayerTestHelper.createPlayer("keith");
+		final RPEntity keith = new Creature();
 		final Player bob = PlayerTestHelper.createPlayer("bob");
 		final SmallMonkey malfoy = new SmallMonkey(bob);
 		zone.add(bob);
 		zone.add(steve);
 		zone.add(malfoy);
+		malfoy.setPosition(0, 0);
+		keith.setPosition(10, 10);
+		steve.setPosition(5, 5);
+		bob.setPosition(1, 1);
 		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
 		malfoy.logic();
 		assertTrue(malfoy.nextTo(steve));
