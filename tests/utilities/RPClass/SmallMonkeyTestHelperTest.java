@@ -23,7 +23,7 @@ public class SmallMonkeyTestHelperTest {
 	@Test
 	public void testGenerateRPClasses() {
 		SmallMonkeyTestHelper.generateRPClasses();
-		assertTrue(RPClass.hasRPClass("monkey"));
+		assertTrue(RPClass.hasRPClass("smallmonkey"));
 	}
 
 }

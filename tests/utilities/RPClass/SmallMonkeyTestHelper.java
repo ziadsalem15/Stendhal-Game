@@ -22,7 +22,7 @@ public static void generateRPClasses() {
 
 		PetTestHelper.generateRPClasses();
 
-		if (!RPClass.hasRPClass("monkey")) {
+		if (!RPClass.hasRPClass("smallmonkey")) {
 			SmallMonkey.generateRPClass();
 		}
 
