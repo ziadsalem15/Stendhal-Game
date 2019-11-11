@@ -108,6 +108,8 @@ public class StendhalRPZone extends MarauroaRPZone {
 	private final List<PassiveEntityRespawnPoint> plantGrowers;
 
 	private final List<RPEntity> playersAndFriends;
+	
+	private final List<RPEntity> playersAndCreatures;
 
 	private final List<Player> players;
 
@@ -191,6 +193,7 @@ public class StendhalRPZone extends MarauroaRPZone {
 		plantGrowers = new LinkedList<PassiveEntityRespawnPoint>();
 		players = new LinkedList<Player>();
 		playersAndFriends = new LinkedList<RPEntity>();
+		playersAndCreatures = new LinkedList<RPEntity>();
 
 		movementListeners = new LinkedList<MovementListener>();
 		zoneListeners = new LinkedList<ZoneEnterExitListener>();
@@ -876,10 +879,15 @@ public class StendhalRPZone extends MarauroaRPZone {
 		if (object instanceof PassiveEntityRespawnPoint) {
 			plantGrowers.add((PassiveEntityRespawnPoint) object);
 		}
+		
+		if (object instanceof Player ||object instanceof Creature) {
+			RPEntity entityObject = (RPEntity) object;
+			playersAndCreatures.add(entityObject);}
 
 		if (object instanceof Blood) {
 			bloods.add((Blood) object);
-		} else if (object instanceof Player) {
+		} 
+		else if (object instanceof Player) {
 			Player playerObject = (Player) object;
 			players.add(playerObject);
 			playersAndFriends.add(playerObject);
@@ -926,6 +934,7 @@ public class StendhalRPZone extends MarauroaRPZone {
 			playersAndFriends.add(object);
 		}
 	}
+	
 
 	private void notifyAdded(final RPObject object) {
 		for (final ZoneEnterExitListener l : zoneListeners) {
@@ -1382,6 +1391,15 @@ public class StendhalRPZone extends MarauroaRPZone {
 	 */
 	public List<RPEntity> getPlayerAndFriends() {
 		return playersAndFriends;
+	}
+	
+	/**
+	 * Gets all players in this zone, as well as all creatures.
+	 *
+	 * @return a list of all players and creatures
+	 */
+	public List<RPEntity> getPlayerAndCreatures() {
+		return playersAndCreatures;
 	}
 
 	/**

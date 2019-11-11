@@ -11,7 +11,6 @@ import games.stendhal.server.core.pathfinder.FixedPath;
 import games.stendhal.server.core.pathfinder.Node;
 import games.stendhal.server.core.pathfinder.Path;
 import games.stendhal.server.entity.RPEntity;
-import games.stendhal.server.entity.npc.NPC;
 import games.stendhal.server.entity.player.Player;
 import marauroa.common.game.RPClass;
 import marauroa.common.game.RPObject;
@@ -37,7 +36,7 @@ public class SmallMonkey extends Pet {
 		setBaseHP(HP);
 		setHP(HP);
 	}
-	NPC stealTarget = null;
+	RPEntity stealTarget = null;
 	
 	public static void generateRPClass() {
 		try {
@@ -113,8 +112,8 @@ public class SmallMonkey extends Pet {
 	 *
 	 * @return list of targets
 	 */
-	public List<NPC> getTargetList() {
-			List<NPC> returnList = getZone().getNPCList();
+	public List<RPEntity> getTargetList() {
+			List<RPEntity> returnList = getZone().getPlayerAndCreatures();
 			if (owner != null) 
 				returnList.remove(owner);
 			return returnList;
@@ -128,14 +127,14 @@ public class SmallMonkey extends Pet {
 	 *            attack radius
 	 * @return chosen enemy or null if no enemy was found.
 	 */
-	public NPC getNearestTarget(final double range) {
+	public RPEntity getNearestTarget(final double range) {
 		// create list of enemies
-		final List<NPC> targetList = getTargetList();
+		final List<RPEntity> targetList = getTargetList();
 		if (targetList.isEmpty()) {
 			return null;	
 		}
 		// calculate the distance of all possible enemies
-		final Map<NPC, Double> distances = new HashMap<NPC, Double>();
+		final Map<RPEntity, Double> distances = new HashMap<RPEntity, Double>();
 		for (final RPEntity target : targetList) {
 			if (target == this) {
 				continue;
@@ -151,16 +150,16 @@ public class SmallMonkey extends Pet {
 				squaredDistance = this.squaredDistance(target);}
 			
 			if (squaredDistance <= (range * range)) {
-				distances.put((NPC) target, squaredDistance);
+				distances.put(target, squaredDistance);
 			}
 		}
 
 		// now choose the nearest target for which there is a path, or is
 		// attackable otherwise
-		NPC chosen = null;
+		RPEntity chosen = null;
 		while ((chosen == null) && !distances.isEmpty()) {
 			double shortestDistance = Double.MAX_VALUE;
-			for (final Map.Entry<NPC, Double> target : distances.entrySet()) {
+			for (final Map.Entry<RPEntity, Double> target : distances.entrySet()) {
 				final double distance = target.getValue();
 				if (distance < shortestDistance) {
 					chosen = target.getKey();
