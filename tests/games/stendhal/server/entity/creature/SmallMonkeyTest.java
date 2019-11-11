@@ -12,8 +12,11 @@
  ***************************************************************************/
 package games.stendhal.server.entity.creature;
 
+import static org.easymock.EasyMock.expect;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -72,12 +75,18 @@ public class SmallMonkeyTest {
 	}
 	
 	/**
-	 * Tests getCloseTo method.
+	 * Tests logic method.
 	 */
 	@Test
-	public void testGetCloseTo() {
-
+	public void testGetCloseNPC() {
+		//final StendhalRPZone zone = new StendhalRPZone("zone");
+		final Creature steve = new Creature(); 
+		final SmallMonkey malfoy = new SmallMonkey();
+		expect(malfoy.getPerceptionRange()).andReturn(5);
+		expect(malfoy.getNearestEnemy(7)).andReturn(steve);
+		assertTrue(malfoy.nextTo(steve));
 	}
+	
 	
     
 
