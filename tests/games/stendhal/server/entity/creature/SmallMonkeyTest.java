@@ -12,12 +12,7 @@
  ***************************************************************************/
 package games.stendhal.server.entity.creature;
 
-import static org.easymock.EasyMock.expect;
-import static org.easymock.classextension.EasyMock.createMock;
-import static org.easymock.classextension.EasyMock.replay;
-import static org.easymock.classextension.EasyMock.verify;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -28,7 +23,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import games.stendhal.server.core.engine.StendhalRPZone;
-import games.stendhal.server.entity.creature.impl.attack.HandToHand;
+import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendhalRPRuleProcessor;
 import games.stendhal.server.maps.MockStendlRPWorld;
@@ -86,13 +81,32 @@ public class SmallMonkeyTest {
 	@Test
 	public void testGetCloseNPC() {
 		MockStendhalRPRuleProcessor.get();
-		//final StendhalRPZone zone = new StendhalRPZone("zone");
-		final Creature steve = createMock(Creature.class);
+		final StendhalRPZone zone = new StendhalRPZone("zone");
+		final RPEntity steve = new Creature();
+		final RPEntity keith = PlayerTestHelper.createPlayer("keith");
 		final SmallMonkey malfoy = new SmallMonkey();
+		zone.add(steve);
+		zone.add(keith);
+		zone.add(malfoy);
 		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
-		//zone.add((Creature)steve);
-		//zone.add(malfoy);
-	    //expect(malfoy.getNearestTarget(malfoy.getPerceptionRange())).andReturn(steve);
+		malfoy.logic();
+		assertTrue(malfoy.nextTo(steve));
+	}
+	
+	/**
+	 * Tests logic method when monkey has an owner.
+	 */
+	@Test
+	public void testGetCloseNPCPlayer() {
+		MockStendhalRPRuleProcessor.get();
+		final StendhalRPZone zone = new StendhalRPZone("zone");
+		final RPEntity steve = new Creature();
+		final Player bob = PlayerTestHelper.createPlayer("bob");
+		final SmallMonkey malfoy = new SmallMonkey(bob);
+		zone.add(bob);
+		zone.add(steve);
+		zone.add(malfoy);
+		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
 		malfoy.logic();
 		assertTrue(malfoy.nextTo(steve));
 	}
