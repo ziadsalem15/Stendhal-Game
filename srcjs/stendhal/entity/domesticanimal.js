@@ -51,6 +51,11 @@ marauroa.rpobjectFactory["cat"] = marauroa.util.fromProto(marauroa.rpobjectFacto
 	largeWeight: 20
 });
 
+marauroa.rpobjectFactory["smallmonkey"] = marauroa.util.fromProto(marauroa.rpobjectFactory["domesticanimal"], {
+	imagePath: "/data/sprites/smallmonkey.png",
+	largeWeight: 20
+});
+
 marauroa.rpobjectFactory["baby_dragon"] = marauroa.util.fromProto(marauroa.rpobjectFactory["domesticanimal"], {
 	imagePath: "/data/sprites/baby_dragon.png",
 	largeWeight: 20,
