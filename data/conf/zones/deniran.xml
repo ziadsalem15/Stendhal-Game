@@ -92,7 +92,6 @@
 
 	<zone name="0_deniran" level="0" x="499232" y="500000"
 		file="Level 0/deniran/deniran.tmx">
-
 		<attributes>
 			<parameter name="color_method">time</parameter>
 			<parameter name="weather">varying</parameter>
@@ -649,7 +648,7 @@
 
 
 	<zone name="int_deniran_castle" file="interiors/deniran/castle.tmx">
-
+        <configurator class-name="games.stendhal.server.maps.deniran.TeacherNPC" />
 		<portal x="15" y="22" ref="entrance_left">
 			<destination zone="0_deniran" ref="deniran_castle_entrance_left" />
 			<attribute name="move.continuous" />
