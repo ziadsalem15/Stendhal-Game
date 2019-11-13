@@ -6,7 +6,6 @@ import games.stendhal.server.core.config.ZoneConfigurator;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.Outfit;
 import games.stendhal.server.entity.npc.EventRaiser;
-//import games.stendhal.server.entity.npc.ShopList;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.behaviour.adder.SellerAdder;
 import games.stendhal.server.entity.npc.behaviour.impl.SellerBehaviour;
@@ -18,7 +17,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FurnitureSellerNPC implements ZoneConfigurator {
-//	private final ShopList shops = SingletonRepository.getShopList();
 
 	/**
 	 * Configure a zone.
@@ -56,10 +54,11 @@ public class FurnitureSellerNPC implements ZoneConfigurator {
 						seller.say("Here you go, a stool!");
 
 						RPAction action = new RPAction();
-						action.put("type", "summon");
-						action.put("furniture", "stool");
-						action.put("x", player.getX() + 1);
-						action.put("y", player.getY() + 1);
+						action.put("type", "summonat");
+						action.put("target", player.getName());
+						action.put("slot", "bag");
+						action.put("item", "stool");
+
 						CommandCenter.execute(player, action);
 
 						player.notifyWorldAboutChanges();
@@ -85,7 +84,7 @@ public class FurnitureSellerNPC implements ZoneConfigurator {
 
     npc.setOutfit(new Outfit(0, 27, 7, 34, 1));
     npc.setDescription("You see Eddy. He sells furniture for a living.");
-    npc.setPosition(45, 45);
+    npc.setPosition(4, 2);
     npc.initHP(100);
 
     zone.add(npc);   

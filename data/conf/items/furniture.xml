@@ -12,6 +12,7 @@
 		<value value="50"/>
 		<equipable>
 			<slot name="ground"/>
+			<slot name="bag"/>
 			<slot name="content"/>
 			<slot name="trade"/>
 		</equipable>
