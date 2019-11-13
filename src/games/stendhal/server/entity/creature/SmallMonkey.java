@@ -114,6 +114,7 @@ public class SmallMonkey extends Pet {
 	 */
 	public List<RPEntity> getTargetList() {
 			List<RPEntity> returnList = getZone().getPlayerAndCreatures();
+			returnList.remove(this);
 			if (owner != null) 
 				returnList.remove(owner);
 			return returnList;

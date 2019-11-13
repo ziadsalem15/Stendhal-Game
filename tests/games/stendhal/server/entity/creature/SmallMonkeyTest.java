@@ -13,6 +13,7 @@
 package games.stendhal.server.entity.creature;
 
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -103,23 +104,23 @@ public class SmallMonkeyTest {
 	public void testGetCloseNPCPlayer() {
 		MockStendhalRPRuleProcessor.get();
 		final StendhalRPZone zone = new StendhalRPZone("zone");
-		final RPEntity steve = PlayerTestHelper.createPlayer("keith");
 		final RPEntity keith = new Creature();
+		final RPEntity steve = PlayerTestHelper.createPlayer("steve");
 		final Player bob = PlayerTestHelper.createPlayer("bob");
-		final SmallMonkey malfoy = new SmallMonkey(bob);
 		zone.add(bob);
+		final SmallMonkey malfoy = new SmallMonkey(bob);
+		
 		zone.add(steve);
 		zone.add(malfoy);
+		zone.add(keith);
 		malfoy.setPosition(0, 0);
 		keith.setPosition(10, 10);
 		steve.setPosition(5, 5);
 		bob.setPosition(1, 1);
-		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
+		assertNull(malfoy.getTargetList());
+		//assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
 		malfoy.logic();
 		assertTrue(malfoy.nextTo(steve));
 	}
-	
-	
-    
 
 }
