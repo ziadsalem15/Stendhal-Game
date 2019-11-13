@@ -52,4 +52,26 @@ public class FurnitureTest {
 		assertEquals(1, pl.getID().getObjectID());
 		assertNotNull(pl.getZone().getEntityAt(0, 0));
 	}
+	
+	/**
+	 * Test for letting furniture item be equipped in inventory.
+	 */
+	@Test
+	public void shouldHaveFurnitureItemEquippedInInventoryAfterBuying() {
+		
+		final Player pl = PlayerTestHelper.createPlayer("testplayer");
+		pl.setAdminLevel(5000);
+		MockStendhalRPRuleProcessor.get().addPlayer(pl);
+		final StendhalRPZone zone = new StendhalRPZone("zone");
+		zone.add(pl);
+		
+		final RPAction action = new RPAction();
+		action.put("type", "summonat");
+		action.put("target", "testplayer");
+		action.put("slot", "bag");
+		action.put("item", "stool");
+		CommandCenter.execute(pl, action);
+		assertNotNull(pl.getAllEquipped("stool"));
+
+	}
 }
