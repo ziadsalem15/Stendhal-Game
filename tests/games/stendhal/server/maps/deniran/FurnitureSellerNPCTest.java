@@ -24,9 +24,9 @@ public class FurnitureSellerNPCTest {
       @BeforeClass
       public static void setUpBeforeClass() throws Exception{
     	  MockStendlRPWorld.get();
-    	  StendhalRPZOne zone = new StendhalRPZone("admin_test");
-    	  new FurnitureSellerNPC().configureZone(zone,null);
-    	  new DatabaseFactory.initializeDatabase();
+    	  //StendhalRPZone zone = new StendhalRPZone("admin_test");
+    	  //new FurnitureSellerNPC().configureZone(zone,null);
+    	  //new DatabaseFactory().initializeDatabase();
       }
       
       @Before
