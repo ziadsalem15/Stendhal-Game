@@ -105,6 +105,7 @@ public class StendhalQuestSystem {
 		loadQuest(new FruitsForCoralia());
 		loadQuest(new GuessKills());
 		loadQuest(new HatForMonogenes());
+		loadQuest(new HelpNPCLonJatham());
 		loadQuest(new HelpTomi());
 		loadQuest(new HelpMrsYeti());
 		loadQuest(new HelpWithTheHarvest());
