@@ -477,6 +477,9 @@ public final class ShopList {
 		shops.add("cafe", "sandwich", 170);
 		shops.add("cafe", "tuna sandwich", 180);
 		shops.add("cafe", "apple pie", 250);
+		
+		// for furniture shop in deniran
+		shops.add("furnitureshop", "stool", 50);
 
 	}
 
