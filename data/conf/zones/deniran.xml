@@ -32,8 +32,8 @@
 
 	<zone name="0_deniran_w" level="0" x="499104" y="500000"
 		file="Level 0/deniran/deniran_w.tmx">
-
-		 <configurator class-name="games.stendhal.server.maps.deniran.FurnitureSellerNPC" />
+		
+		<configurator class-name="games.stendhal.server.maps.deniran.furnitureshop.FurnitureSellerNPC" />
 		
 		<attributes>
 			<parameter name="color_method">time</parameter>
@@ -174,6 +174,11 @@
 
 	<zone name="0_deniran_e" level="0" x="499360" y="500000"
 		file="Level 0/deniran/deniran_e.tmx">
+		
+		<portal x="59" y="106" ref="weaponshop_entrance">
+      <destination zone="int_nalwor_weaponshop" ref="entrance" />
+      <attribute name="move.continuous" />
+    </portal>
 
 		<attributes>
 			<parameter name="color_method">time</parameter>
@@ -568,6 +573,27 @@
 
 	</zone>
 
+	<zone name="int_nalwor_weaponshop" file="interiors/nalwor/weaponshop.tmx">
+    <configurator
+      class-name="games.stendhal.server.maps.nalwor.weaponshop.BuyerNPC" />
+
+    <portal x="16" y="65" ref="entrance">
+      <destination zone="0_deniran_e" ref="weaponshop_entrance" />
+      <attribute name="move.continuous" />
+    </portal>
+
+    <entity x="3" y="1">
+      <implementation
+        class-name="games.stendhal.server.entity.mapstuff.sign.ShopSign">
+        <parameter name="shop">elfbuyrare</parameter>
+        <parameter name="title">Elodrin's shop</parameter>
+        <parameter name="seller">false</parameter>
+        <parameter name="caption">Elodrin will buy these items.</parameter>
+      </implementation>
+
+      <attribute name="class">blackboard</attribute>
+    </entity>
+  </zone>
 
 	<zone name="int_deniran_bank_blue_roof" file="interiors/deniran/bank_blue_roof.tmx">
 
