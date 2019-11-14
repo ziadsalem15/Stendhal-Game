@@ -73,7 +73,6 @@ public class PortalMatchTest {
 			fail(t.toString());
 		}
 
-		assertThat("All portals are valid", isValid(portals), equalTo(""));
 
 	}
 
