@@ -44,7 +44,7 @@ public class RainbowBeansTest {
 	private Engine en;
 
 	private String questSlot;
-	private String money;
+	//private String money;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
