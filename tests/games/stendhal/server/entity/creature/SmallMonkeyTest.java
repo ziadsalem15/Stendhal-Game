@@ -25,7 +25,6 @@ import org.junit.Test;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.player.Player;
-import games.stendhal.server.maps.MockStendhalRPRuleProcessor;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
 import utilities.PlayerTestHelper;
@@ -80,20 +79,23 @@ public class SmallMonkeyTest {
 	 */
 	@Test
 	public void testGetCloseNPC() {
-		MockStendhalRPRuleProcessor.get();
-		final StendhalRPZone zone = new StendhalRPZone("zone");
+	
+		final StendhalRPZone zone = new StendhalRPZone("zone",20,20);
 		final RPEntity steve = new Creature();
 		final RPEntity keith = PlayerTestHelper.createPlayer("keith");
-		final SmallMonkey malfoy = new SmallMonkey();
+		final SmallMonkey mymonkey = new SmallMonkey();
 		zone.add(steve);
 		zone.add(keith);
-		zone.add(malfoy);
-		malfoy.setPosition(0, 0);
+		zone.add(mymonkey);
+		mymonkey.setPosition(0, 0);
 		keith.setPosition(10, 10);
-		steve.setPosition(1, 1);
-		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
-		malfoy.logic();
-		assertTrue(malfoy.nextTo(steve));
+		steve.setPosition(3, 3);
+		//check nearest target is the closest entity
+		assertThat(mymonkey.getNearestTarget(),is(steve));
+		//run logic until the monkey has stopped moving
+		do{mymonkey.logic();}while(mymonkey.moving());
+		//check that the monkey has stopped at the nearest target
+		assertTrue(mymonkey.nextTo(steve));
 	}
 	
 	/**
@@ -101,23 +103,24 @@ public class SmallMonkeyTest {
 	 */
 	@Test
 	public void testGetCloseNPCPlayer() {
-		MockStendhalRPRuleProcessor.get();
-		final StendhalRPZone zone = new StendhalRPZone("zone");
-		final RPEntity steve = PlayerTestHelper.createPlayer("keith");
+		final StendhalRPZone zone = new StendhalRPZone("zone",20,20);
+		final RPEntity steve = PlayerTestHelper.createPlayer("steve");
 		final RPEntity keith = new Creature();
 		final Player bob = PlayerTestHelper.createPlayer("bob");
-		final SmallMonkey malfoy = new SmallMonkey(bob);
 		zone.add(bob);
+		final SmallMonkey thismonkey = new SmallMonkey(bob);
 		zone.add(steve);
-		zone.add(malfoy);
-		malfoy.setPosition(0, 0);
-		keith.setPosition(10, 10);
-		steve.setPosition(5, 5);
-		bob.setPosition(1, 1);
-		assertThat(malfoy.getNearestTarget(malfoy.getPerceptionRange()),is(steve));
-		malfoy.logic();
-		assertTrue(malfoy.nextTo(steve));
-	}
+		zone.add(keith);
+		thismonkey.setPosition(0, 0);
+		keith.setPosition(0, 10);
+		steve.setPosition(0, 7);
+		bob.setPosition(0, 4);
+		//check nearest target is the closest entity (not the monkey or owner)
+		assertThat(thismonkey.getNearestTarget(),is(steve));
+		//run logic until the monkey has stopped moving
+		do{thismonkey.logic();}while(thismonkey.moving());
+		//check that the monkey has stopped at the nearest target
+		assertTrue(thismonkey.nextTo(steve));	}
 	
 	
     
