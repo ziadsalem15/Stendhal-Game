@@ -13,6 +13,7 @@
 package games.stendhal.server.entity.creature;
 
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -24,6 +25,7 @@ import org.junit.Test;
 
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.RPEntity;
+import games.stendhal.server.entity.item.Item;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
@@ -120,9 +122,30 @@ public class SmallMonkeyTest {
 		//run logic until the monkey has stopped moving
 		do{thismonkey.logic();}while(thismonkey.moving());
 		//check that the monkey has stopped at the nearest target
-		assertTrue(thismonkey.nextTo(steve));	}
-	
-	
-    
+		assertTrue(thismonkey.nextTo(steve));	
+	}
 
+	
+	@Test
+	public void testRob() {
+		final StendhalRPZone zone = new StendhalRPZone("zone",20,20);
+		final RPEntity steve = PlayerTestHelper.createPlayer("steve");
+		final Player bob = PlayerTestHelper.createPlayer("bob");
+		zone.add(bob);
+		final SmallMonkey thismonkey = new SmallMonkey(bob);
+		zone.add(steve);
+		thismonkey.setPosition(0, 0);
+		steve.setPosition(0, 7);
+		String item = "dagger";
+		
+		steve.equipToInventoryOnly(actualItem);
+		bob.setPosition(0, 4);
+		//run logic until the monkey has stopped moving
+		do{thismonkey.logic();}while(thismonkey.moving());
+		//check that monkey has stolen from steve
+		assertFalse(steve.isEquipped(item,1));
+		do{thismonkey.logic();}while(thismonkey.moving());
+		//check that monkey has given item to owner
+		assertTrue(bob.isEquipped(item, 1));
+	}
 }
