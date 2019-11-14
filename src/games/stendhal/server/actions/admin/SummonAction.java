@@ -26,6 +26,7 @@ import games.stendhal.server.core.rp.StendhalRPAction;
 import games.stendhal.server.core.rule.EntityManager;
 import games.stendhal.server.entity.Entity;
 import games.stendhal.server.entity.creature.BabyDragon;
+import games.stendhal.server.entity.creature.SmallMonkey;
 import games.stendhal.server.entity.creature.Cat;
 import games.stendhal.server.entity.creature.Creature;
 import games.stendhal.server.entity.creature.PurpleDragon;
@@ -94,6 +95,13 @@ public class SummonAction extends AdministrationAction {
 				} else {
 					final PurpleDragon dragon = new PurpleDragon(player);
 					found(type, dragon);
+				}
+			} else if ("smallmonkey".equals(type)) {
+				if (player.hasPet()) {
+					error("You already own a pet!");
+				} else {
+					final SmallMonkey monkey = new SmallMonkey(player);
+					found(type, monkey);
 				}
 			} else if ("sheep".equals(type)) {
 				if (player.hasSheep()) {

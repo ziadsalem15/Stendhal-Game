@@ -51,6 +51,7 @@ import games.stendhal.server.entity.Entity;
 import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.creature.AttackableCreature;
 import games.stendhal.server.entity.creature.BabyDragon;
+import games.stendhal.server.entity.creature.SmallMonkey;
 import games.stendhal.server.entity.creature.Creature;
 import games.stendhal.server.entity.creature.DomesticAnimal;
 import games.stendhal.server.entity.creature.Sheep;
@@ -107,6 +108,8 @@ public class StendhalRPZone extends MarauroaRPZone {
 	private final List<PassiveEntityRespawnPoint> plantGrowers;
 
 	private final List<RPEntity> playersAndFriends;
+	
+	private final List<RPEntity> playersAndCreatures;
 
 	private final List<Player> players;
 
@@ -190,6 +193,7 @@ public class StendhalRPZone extends MarauroaRPZone {
 		plantGrowers = new LinkedList<PassiveEntityRespawnPoint>();
 		players = new LinkedList<Player>();
 		playersAndFriends = new LinkedList<RPEntity>();
+		playersAndCreatures = new LinkedList<RPEntity>();
 
 		movementListeners = new LinkedList<MovementListener>();
 		zoneListeners = new LinkedList<ZoneEnterExitListener>();
@@ -875,10 +879,15 @@ public class StendhalRPZone extends MarauroaRPZone {
 		if (object instanceof PassiveEntityRespawnPoint) {
 			plantGrowers.add((PassiveEntityRespawnPoint) object);
 		}
+		
+		if (object instanceof Player ||object instanceof Creature) {
+			RPEntity entityObject = (RPEntity) object;
+			playersAndCreatures.add(entityObject);}
 
 		if (object instanceof Blood) {
 			bloods.add((Blood) object);
-		} else if (object instanceof Player) {
+		} 
+		else if (object instanceof Player) {
 			Player playerObject = (Player) object;
 			players.add(playerObject);
 			playersAndFriends.add(playerObject);
@@ -899,6 +908,8 @@ public class StendhalRPZone extends MarauroaRPZone {
 			sheepFoods.add((SheepFood) object);
 		} else if (object instanceof BabyDragon) {
 			playersAndFriends.add((BabyDragon) object);
+		} else if (object instanceof SmallMonkey) {
+			playersAndFriends.add((SmallMonkey) object);
 		} else if (object instanceof SpeakerNPC) {
 			SingletonRepository.getNPCList().add((SpeakerNPC) object);
 		} else if (object instanceof Portal) {
@@ -923,6 +934,7 @@ public class StendhalRPZone extends MarauroaRPZone {
 			playersAndFriends.add(object);
 		}
 	}
+	
 
 	private void notifyAdded(final RPObject object) {
 		for (final ZoneEnterExitListener l : zoneListeners) {
@@ -968,6 +980,8 @@ public class StendhalRPZone extends MarauroaRPZone {
 		} else if (object instanceof SheepFood) {
 			sheepFoods.remove(object);
 		} else if (object instanceof BabyDragon) {
+			playersAndFriends.remove(object);
+		} else if (object instanceof SmallMonkey) {
 			playersAndFriends.remove(object);
 		} else if (object instanceof SpeakerNPC) {
 			SingletonRepository.getNPCList().remove(((SpeakerNPC) object).getName());
@@ -1377,6 +1391,15 @@ public class StendhalRPZone extends MarauroaRPZone {
 	 */
 	public List<RPEntity> getPlayerAndFriends() {
 		return playersAndFriends;
+	}
+	
+	/**
+	 * Gets all players in this zone, as well as all creatures.
+	 *
+	 * @return a list of all players and creatures
+	 */
+	public List<RPEntity> getPlayerAndCreatures() {
+		return playersAndCreatures;
 	}
 
 	/**

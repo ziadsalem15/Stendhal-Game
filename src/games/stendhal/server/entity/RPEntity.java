@@ -2280,6 +2280,10 @@ System.out.printf("  drop: %2d %2d\n", attackerRoll, defenderRoll);
 	private List<Item> getAllEquipped(Predicate<Item> condition) {
 		return equippedStream().filter(condition).collect(Collectors.toList());
 	}
+	
+	public List<Item> getAllItems() {
+		return equippedStream().collect(Collectors.toList());
+	}
 
 	/**
 	 * Retrieves all of an item with matching info string.
