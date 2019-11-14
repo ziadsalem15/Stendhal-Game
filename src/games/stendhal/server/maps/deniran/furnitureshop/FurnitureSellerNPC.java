@@ -37,7 +37,6 @@ public class FurnitureSellerNPC implements ZoneConfigurator {
             setPath(null);
         } 
         
-
         @Override
 		protected void createDialog() {
 			class FurnitureSellerBehaviour extends SellerBehaviour {
