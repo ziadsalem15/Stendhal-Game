@@ -27,8 +27,8 @@ private Engine en;
 public static void setUpBeforeClass()throws Exception
     {
     MockStendlRPWorld.get();
-    //StendhalRPZone zone = new StendhalRPZone("admin_test");
-    //new FurnitureSellerNPC().configureZone(zone,null);
+    StendhalRPZone zone = new StendhalRPZone("admin_test");
+    new FurnitureSellerNPC().configureZone(zone,null);
     new DatabaseFactory().initializeDatabase();
     }
 
@@ -52,3 +52,4 @@ public void createDialogTest()
     assertEquals("Bye",getReply(npc));
     }
 }
+		
