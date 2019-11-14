@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../items.xsd ">
+
+	<item name="stool">
+		<type class="furniture" subclass="stool" tileid="-1"/>
+		<description>You see a small wooden stool.</description>
+		<implementation class-name="games.stendhal.server.entity.item.Item"/>
+		<attributes>
+		</attributes>
+		<weight value="0.01"/>
+		<value value="50"/>
+		<equipable>
+			<slot name="ground"/>
+			<slot name="bag"/>
+			<slot name="content"/>
+			<slot name="trade"/>
+		</equipable>
+	</item>
+	
+</items>

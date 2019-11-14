@@ -32,7 +32,7 @@
 
 	<zone name="0_deniran_w" level="0" x="499104" y="500000"
 		file="Level 0/deniran/deniran_w.tmx">
-
+				
 		<attributes>
 			<parameter name="color_method">time</parameter>
 			<parameter name="weather">varying</parameter>
@@ -172,6 +172,11 @@
 
 	<zone name="0_deniran_e" level="0" x="499360" y="500000"
 		file="Level 0/deniran/deniran_e.tmx">
+		
+		<portal x="8" y="65" ref="furnitureshop_entrance">
+      		<destination zone="int_furniture_shop" ref="entrance" />
+      		<attribute name="move.continuous" />
+    	</portal>
 
 		<attributes>
 			<parameter name="color_method">time</parameter>
@@ -558,7 +563,17 @@
 	<!-- interiors -->
 
 	<zone name="int_deniran_tiny_house" file="interiors/deniran/tiny_house.tmx">
-
+	    <configurator class-name="games.stendhal.server.maps.deniran.furnitureshop.FurnitureSellerNPC" />
+		<entity x="5" y="1">
+      		<implementation class-name="games.stendhal.server.entity.mapstuff.sign.ShopSign">
+        		<parameter name="shop">furnitureshop</parameter>
+        		<parameter name="title">Furniture sale</parameter>
+       	 		<parameter name="seller">true</parameter>
+       	 		<parameter name="caption">You can buy these furniture items here.</parameter>
+      		</implementation>
+      	<attribute name="class">blackboard</attribute>
+    	</entity>
+    	
 		<portal x="3" y="6" ref="entrance">
 			<destination zone="0_deniran_w" ref="deniran_tiny_house_entrance" />
 			<attribute name="move.continuous" />
