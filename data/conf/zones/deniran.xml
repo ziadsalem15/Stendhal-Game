@@ -32,7 +32,14 @@
 
 	<zone name="0_deniran_w" level="0" x="499104" y="500000"
 		file="Level 0/deniran/deniran_w.tmx">
+<<<<<<< HEAD
 				
+=======
+    <configurator class-name="games.stendhal.server.maps.deniran.RaresNPC"/>
+    <configurator class-name="games.stendhal.server.maps.deniran.VladNPC"/>
+    <configurator class-name="games.stendhal.server.maps.deniran.ZiadNPC"/>
+
+>>>>>>> branch 'master' of https://gitlab.cs.man.ac.uk/comp23311_2019/stendhal_S1Team24.git
 		<attributes>
 			<parameter name="color_method">time</parameter>
 			<parameter name="weather">varying</parameter>
@@ -92,7 +99,6 @@
 
 	<zone name="0_deniran" level="0" x="499232" y="500000"
 		file="Level 0/deniran/deniran.tmx">
-
 		<attributes>
 			<parameter name="color_method">time</parameter>
 			<parameter name="weather">varying</parameter>
@@ -664,7 +670,7 @@
 
 
 	<zone name="int_deniran_castle" file="interiors/deniran/castle.tmx">
-
+        <configurator class-name="games.stendhal.server.maps.deniran.TeacherNPC" />
 		<portal x="15" y="22" ref="entrance_left">
 			<destination zone="0_deniran" ref="deniran_castle_entrance_left" />
 			<attribute name="move.continuous" />
