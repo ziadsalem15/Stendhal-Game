@@ -168,6 +168,21 @@ Authors of Stendhal are:
   · Bugs fixer
   - Diligent Dodo (aka Soniccuz)
   · Artist (mimic, dodo, suba diving concepts)
+  Josie
+  · Stealing Pet feature
+  Chelsea
+  · Stealing Pet feature
+  · Sleeping Bag
+  Ziad
+  · Lon Jatham feature 
+  Rares
+  ·Lon Jatham feature
+  Vlad
+  ·Lon Jatham feature
+  Junyao
+  ·Buying House Furniture feature
+  Dhruvi
+  ·Buying House Furniture feature
 
 We also thank many who have contributed to Stendhal by providing patches,
 which the rest of the team commited on their behalf. 

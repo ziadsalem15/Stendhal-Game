@@ -1,4 +1,10 @@
 Changelog
+1.32 implemented 4 new features: 
+  ·Buying House Furniture feature
+  ·Stealing pet feature
+  ·Lon Jatham feature
+  ·Sleeping Bag feature
+
 ---------
 1.31 solved the issued bugs
 ---------
