@@ -23,9 +23,10 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import games.stendhal.server.core.engine.SingletonRepository;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.RPEntity;
-import games.stendhal.server.entity.item.Item;
+import games.stendhal.server.entity.item.StackableItem;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
@@ -135,17 +136,18 @@ public class SmallMonkeyTest {
 		final SmallMonkey thismonkey = new SmallMonkey(bob);
 		zone.add(steve);
 		thismonkey.setPosition(0, 0);
-		steve.setPosition(0, 7);
-		String item = "dagger";
-		
-		steve.equipToInventoryOnly(actualItem);
 		bob.setPosition(0, 4);
+		steve.setPosition(0, 7);
+		final StackableItem item = (StackableItem)SingletonRepository.getEntityManager().getItem("money");
+		steve.equipToInventoryOnly(item);
+		assertTrue(steve.isEquipped(item.getName(),1));
 		//run logic until the monkey has stopped moving
 		do{thismonkey.logic();}while(thismonkey.moving());
 		//check that monkey has stolen from steve
-		assertFalse(steve.isEquipped(item,1));
+		assertFalse(steve.isEquipped(item.getName(),1));
+		//run logic until monkey is back to owner
 		do{thismonkey.logic();}while(thismonkey.moving());
 		//check that monkey has given item to owner
-		assertTrue(bob.isEquipped(item, 1));
+		assertTrue(bob.isEquipped(item.getName(), 1));
 	}
 }

@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 
 import games.stendhal.server.entity.RPEntity;
+import games.stendhal.server.entity.item.Item;
 import games.stendhal.server.entity.player.Player;
 import marauroa.common.game.RPClass;
 import marauroa.common.game.RPObject;
@@ -25,7 +26,9 @@ public class SmallMonkey extends Pet {
 	//is the small monkey moving towards a target
 	private List<RPEntity> beenRobbed;
 	private boolean isMoving;
-
+	private boolean returned = true;
+	private Item stolenItem;
+	
 	@Override
 	void setUp() {
 		HP = 300;
@@ -217,7 +220,10 @@ public class SmallMonkey extends Pet {
 					//if the small monkey is not next to the target it is still moving
                     isMoving = !nextTo(stealTarget);
                     //if it has stolen from the target, add that target to the list of already robbed entities
-                    if(nextTo(stealTarget)) beenRobbed.add(stealTarget);
+                    if(nextTo(stealTarget)) {
+                    	this.rob(stealTarget);
+                    	beenRobbed.add(stealTarget);
+                    }
                 }
 				
 			}
@@ -227,6 +233,13 @@ public class SmallMonkey extends Pet {
 		{
 			// call super class to perform common tasks to pets (will move the monkey back to the owner)
 			super.logic();
+			if(!returned)
+			{
+				owner.equipOrPutOnGround(stolenItem);
+				returned = true;
+				System.out.println("RETURNED");
+			}
+				
 		}
 		else
 		{
@@ -235,11 +248,26 @@ public class SmallMonkey extends Pet {
 		}
 	}//logic
 	
+	//stub for robbing
+	private void rob(RPEntity target) {
+		List<Item> listOfItems = target.getAllItems();
+		System.out.println(listOfItems);
+		if(listOfItems.size()>0)
+		{
+			Item item = listOfItems.get(0);
+			target.drop(item);
+			System.out.println("DROPPED");
+			stolenItem = item;
+			returned = false;
+		}
+	}
+
 	//returns if the monkey is moving
 	public boolean moving()
 	{
 		return isMoving;
 	}
+
 	
 
 
