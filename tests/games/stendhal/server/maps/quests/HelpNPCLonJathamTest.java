@@ -134,7 +134,6 @@ public class HelpNPCLonJathamTest extends ZonePlayerAndNPCTestImpl
 		en.step(player, "note");
 		assertEquals("Drat! You remembered that I asked you for one, right? I could really use it right now.", getReply(npc));
 		en.step(player, "bye");
-		assertEquals("See you at the next lecture!", getReply(npc));
 		
 	}
 	

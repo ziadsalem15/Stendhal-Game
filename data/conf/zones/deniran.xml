@@ -32,9 +32,9 @@
 
 	<zone name="0_deniran_w" level="0" x="499104" y="500000"
 		file="Level 0/deniran/deniran_w.tmx">
-    <configurator class-name="games.stendhal.server.maps.deniran.PythonNPC"/>
-    <configurator class-name="games.stendhal.server.maps.deniran.AINPC"/>
-    <configurator class-name="games.stendhal.server.maps.deniran.DumbNPC"/>
+    <configurator class-name="games.stendhal.server.maps.deniran.RaresNPC"/>
+    <configurator class-name="games.stendhal.server.maps.deniran.VladNPC"/>
+    <configurator class-name="games.stendhal.server.maps.deniran.ZiadNPC"/>
 
 		<attributes>
 			<parameter name="color_method">time</parameter>
