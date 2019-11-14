@@ -1,5 +1,6 @@
 package games.stendhal.server.maps.deniran;
 
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.SpeakerNPCTestHelper.getReply;

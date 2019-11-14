@@ -43,14 +43,17 @@ public class RaresNPCTest extends ZonePlayerAndNPCTestImpl{
 		assertTrue(en.step(player, "quest"));
 		assertEquals("That would be great !", getReply(npc));
 		
+		assertTrue(en.step(player, "job"));
+		assertEquals("I do nothing with my life :(\"\n", getReply(npc));
+		
 		assertTrue(en.step(player, "note"));
 		assertEquals("I will write my name here.", getReply(npc));
 		
-		assertTrue(en.step(player, "question"));
-		assertEquals("When will the first semester start?", getReply(npc));
+		assertTrue(en.step(player, "help"));
+		assertEquals("If only someone would teach me a bit of Python...\"", getReply(npc));
 		
 		assertTrue(en.step(player, "bye"));
-		assertEquals("Bye, see you later!", getReply(npc));
+		assertEquals("Bye bye", getReply(npc));
 		}
 
 }

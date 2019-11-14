@@ -22,17 +22,20 @@ public class TeacherNPC implements ZoneConfigurator {
 	 * @param	zone		The zone to be configured.
 	 * @param	attributes	Configuration attributes.
 	 */
+	@Override
 	public void configureZone(final StendhalRPZone zone, final Map<String, String> attributes) {
 		buildNPC(zone);
 	}
 	 private void buildNPC(final StendhalRPZone zone) {
  	    final SpeakerNPC npc = new SpeakerNPC("Lon Jatham") {
-         protected void createPath() {
+         @Override
+		protected void createPath() {
              setPath(null);
              //NPC stand still
          }
 
-         protected void createDialog() {
+         @Override
+		protected void createDialog() {
              // Lets the NPC reply with "Hallo" when a player greets him. But we could have set a custom greeting inside the ()
              addGreeting("Hello curious mind!");
              // Lets the NPC reply when a player says "job"

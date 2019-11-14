@@ -35,7 +35,7 @@ public class ZiadNPCTest extends ZonePlayerAndNPCTestImpl
 		final Engine en = npc.getEngine();
 
 		assertTrue(en.step(player, "hi Ziad"));
-		assertEquals("Hello !", getReply(npc));
+		assertEquals("OOoooooooooohh #help?", getReply(npc));
 	   }
 	
 	public void testQuestHelpAndJob() {
@@ -45,14 +45,17 @@ public class ZiadNPCTest extends ZonePlayerAndNPCTestImpl
 		assertTrue(en.step(player, "quest"));
 		assertEquals("That would be great !", getReply(npc));
 		
+		assertTrue(en.step(player, "help"));
+		assertEquals("Surimasa", getReply(npc));
+		
 		assertTrue(en.step(player, "note"));
 		assertEquals("I will write my name here.", getReply(npc));
 		
-		assertTrue(en.step(player, "question"));
-		assertEquals("Which type of AI we study?", getReply(npc));
+		assertTrue(en.step(player, "job"));
+		assertEquals("Sugoii", getReply(npc));
 		
 		assertTrue(en.step(player, "bye"));
-		assertEquals("Bye, see you later!", getReply(npc));
+		assertEquals("Aaaaaaaahh", getReply(npc));
 		}
 }
 
