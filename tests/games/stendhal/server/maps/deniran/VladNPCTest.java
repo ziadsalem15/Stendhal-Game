@@ -34,7 +34,7 @@ public class VladNPCTest extends ZonePlayerAndNPCTestImpl{
 		final Engine en = npc.getEngine();
 
 		assertTrue(en.step(player, "hi Vlad"));
-		assertEquals("Hello !", getReply(npc));
+		assertEquals("I never ever switch doors #help?", getReply(npc));
 	   }
 	
 	public void testQuestHelpAndJob() {
@@ -44,14 +44,17 @@ public class VladNPCTest extends ZonePlayerAndNPCTestImpl{
 		assertTrue(en.step(player, "quest"));
 		assertEquals("That would be great !", getReply(npc));
 		
+		assertTrue(en.step(player, "job"));
+		assertEquals("I entertain people and care for animals", getReply(npc));
+		
 		assertTrue(en.step(player, "note"));
 		assertEquals("I will write my name here.", getReply(npc));
 		
-		assertTrue(en.step(player, "question"));
-		assertEquals("How many modules are we taking?", getReply(npc));
+		assertTrue(en.step(player, "help"));
+		assertEquals("There is no such thing as robots!", getReply(npc));
 		
 		assertTrue(en.step(player, "bye"));
-		assertEquals("Bye, see you later!", getReply(npc));
+		assertEquals("see you later aligator", getReply(npc));
 		}
 
 }
