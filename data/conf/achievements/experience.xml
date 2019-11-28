@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="level10">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.ExperienceAchievementFactory"/>
+		<attributes>
+			<identifier value = "xp.level.010" />
+			<title value = "Greenhorn" />
+			<description value = "Reach level 10" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new LevelGreaterThanCondition(9)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="level50">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.ExperienceAchievementFactory"/>
+		<attributes>
+			<identifier value = "xp.level.050" />
+			<title value = "Novice" />
+			<description value = "Reach level 50" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new LevelGreaterThanCondition(49)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="level100">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.ExperienceAchievementFactory"/>
+		<attributes>
+			<identifier value = "xp.level.100" />
+			<title value = "Apprentice" />
+			<description value = "Reach level 100" />
+			<score value = Achievement.EASY_BASE_SCORE />
+			<active value = true />
+			<condition value = new LevelGreaterThanCondition(99) />
+		</attributes>
+	</achievement>
+
+	<achievement name="level200">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "xp.level.200" />
+			<title value = "Adventurer" />
+			<description value = "Reach level 200" />
+			<score value = Achievement.MEDIUM_BASE_SCORE />
+			<active value = true />
+			<condition value = new LevelGreaterThanCondition(199) />
+		</attributes>
+	</achievement>
+
+	<achievement name="level300">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "xp.level.300" />
+			<title value = "Experienced Adventurer" />
+			<description value = "Reach level 300" />
+			<score value = Achievement.MEDIUM_BASE_SCORE />
+			<active value = true />
+			<condition value = new LevelGreaterThanCondition(299) />
+		</attributes>
+	</achievement>
+	
+	<achievement name="level400">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "xp.level.400" />
+			<title value = "Master Adventurer" />
+			<description value = "Reach level 400" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new LevelGreaterThanCondition(399)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="level500">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.ExperienceAchievementFactory"/>
+		<attributes>
+			<identifier value = "xp.level.500" />
+			<title value = "Stendhal Master" />
+			<description value = "Reach level 500" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new LevelGreaterThanCondition(499)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="level597">
+		<type class="achievements" subclass="experience.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.ExperienceAchievementFactory"/>
+		<attributes>
+			<identifier value = "xp.level.597" />
+			<title value = "Stendhal High Master" />
+			<description value = "Reach level 597" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new LevelGreaterThanCondition(596)" />
+		</attributes>
+	</achievement>
+</achievements>
