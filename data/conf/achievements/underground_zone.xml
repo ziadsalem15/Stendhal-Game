@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="Canary">
+	  	<type class="achievements" subclass="underground_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.UndergroundZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.underground.semos"/>
+			<title value="Canary"/>
+			<description value="Visit all underground zones in the Semos region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('semos', Boolean.TRUE, Boolean.FALSE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="Fear not drows nor hell">
+	  	<type class="achievements" subclass="underground_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.UndergroundZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.underground.nalwor"/>
+			<title value="Fear not drows nor hell"/>
+			<description value="Visit all underground zones in the Nalwor region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('nalwor', Boolean.TRUE, Boolean.FALSE)"/>
+		</attributes>
+	</achievement>
+
+	<achievement name="Labyrinth Solver">
+	  	<type class="achievements" subclass="underground_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.UndergroundZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.underground.athor"/>
+			<title value="Labyrinth Solver"/>
+			<description value="Visit all underground zones in the Nalwor region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('athor', Boolean.TRUE, Boolean.FALSE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="Human Mole">
+	  	<type class="achievements" subclass="underground_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.UndergroundZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.underground.amazon"/>
+			<title value="Human Mole"/>
+			<description value="Visit all underground zones in the Amazon region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('amazon', Boolean.TRUE, Boolean.FALSE)"/>
+		</attributes>
+	</achievement>
+
+	<achievement name="Human Mole">
+	  	<type class="achievements" subclass="underground_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.UndergroundZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.underground.ados"/>
+			<title value="Deep Dweller"/>
+			<description value="Visit all underground zones in the Ados region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('ados', Boolean.TRUE, Boolean.FALSE)"/>
+		</attributes>
+	</achievement>	
+	
+</achievements>
