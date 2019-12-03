@@ -7,4 +7,10 @@
 	<group uri="achievements/testfriend.xml"/>
 	<group uri="achievements/testinterior_zone.xml"/>
 	<group uri="achievements/testitem.xml"/>
+	<group uri="achievements/testkirdneh_item.xml"/>
+	<group uri="achievements/testmithrilbourgh_enemy_army.xml"/>
+	<group uri="achievements/testoutside_zone.xml"/>
+	<group uri="achievements/testproduction.xml"/>
+	<group uri="achievements/testquest.xml"/>
+	<group uri="achievements/testsemos_monster_quest.xml"/>
 </groups>

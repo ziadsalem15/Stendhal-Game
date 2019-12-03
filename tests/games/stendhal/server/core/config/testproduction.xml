@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="gourmettest">
+	  	<type class="achievements" subclass="production" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.ProductionAchievementFactory"/>
+		<attributes>
+			<identifier value="production.class.food"/>
+			<title value="Gourmet"/>
+			<description value="Order all food types available from Faiumoni's cooks"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new AndCondition(
+						new PlayerProducedNumberOfItemsCondition(1, foods),
+						new QuestStateStartsWithCondition('coal_for_haunchy','waiting;'))"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="thirsty workertest">
+	  	<type class="achievements" subclass="production" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.ProductionAchievementFactory"/>
+		<attributes>
+			<identifier value="production.class.drink"/>
+			<title value="Thirsty Worker"/>
+			<description value="Order all drink types available from Faiumoni's cooks"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new AndCondition(
+						new PlayerProducedNumberOfItemsCondition(1, drinks),
+						new QuestCompletedCondition('soup_maker'),
+						new QuestCompletedCondition('fishsoup_maker'),
+						new QuestCompletedCondition('koboldish_torcibud'))"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="alchemisttest">
+	  	<type class="achievements" subclass="production" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.ProductionAchievementFactory"/>
+		<attributes>
+			<identifier value="production.class.resource"/>
+			<title value="Alchemist"/>
+			<description value="Produce 5 of each kind of precious metal and resource"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerProducedNumberOfItemsCondition(5, resources)"/>
+		</attributes>
+	</achievement>
+
+	<achievement name="jenny's assistanttest">
+	  	<type class="achievements" subclass="production" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.ProductionAchievementFactory"/>
+		<attributes>
+			<identifier value="production.flour.1000"/>
+			<title value="Jenny's Assistant"/>
+			<description value="Produce 1000 flour"/>
+			<score value="Achievement.EASY_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerProducedNumberOfItemsCondition(1000, 'flour')"/>
+		</attributes>
+	</achievement>
+	
+</achievements>
