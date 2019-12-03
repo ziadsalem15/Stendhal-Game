@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal groups.xsd ">
+	<group uri="achievements/testados_item_quest.xml"/>
+	<group uri="achievements/testexperience.xml"/>
+	<group uri="achievements/testfighting.xml"/>
+	<group uri="achievements/testfriend.xml"/>
+	<group uri="achievements/testinterior_zone.xml"/>
+	<group uri="achievements/testitem.xml"/>
+</groups>

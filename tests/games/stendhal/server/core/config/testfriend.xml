@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="childrentest">
+		<type class="achievements" subclass="friend.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FriendAchievementFactory"/>
+		<attributes>
+			<identifier value = "friend.quests.children" />
+			<title value = "Childrens' friend" />
+			<description value = "Complete quests for all children" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new AndCondition(
+						new QuestStartedCondition('susi'),
+						new QuestCompletedCondition('introduce_players'),
+						new QuestCompletedCondition('plinks_toy'),
+						new QuestCompletedCondition('toys_collector'),
+						new AndCondition(new QuestActiveCondition('campfire'), new QuestNotInStateCondition('campfire', 'start')),
+						new QuestStateStartsWithCondition('icecream_for_annie','eating;'),
+						new QuestStateStartsWithCondition('chocolate_for_elisabeth','eating;'),
+						new QuestCompletedCondition('find_jefs_mom'),
+						new AndCondition(new QuestActiveCondition('fishsoup_for_hughie'), new QuestNotInStateCondition('fishsoup_for_hughie', 'start'),
+						new QuestCompletedCondition('coded_message')))))" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="findtest">
+		<type class="achievements" subclass="friend.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FriendAchievementFactory"/>
+		<attributes>
+			<identifier value = "friend.quests.find" />
+			<title value = "Private Detective" />
+			<description value = "Find all lost and hidden people" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new AndCondition(
+						new QuestCompletedCondition('find_rat_kids'),
+						new QuestCompletedCondition('find_ghosts'),
+						new ChatCondition() {
+							@Override
+							public boolean fire(final Player player, final Sentence sentence, final Entity entity) {
+								if (!player.hasQuest('seven_cherubs')) {
+									return false;
+								}
+								final String npcDoneText = player.getQuest('seven_cherubs');
+								final String[] done = npcDoneText.split(';');
+								final int left = 7 - done.length;
+								return left < 0;}})"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="karmatest">
+		<type class="achievements" subclass="friend.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FriendAchievementFactory"/>
+		<attributes>
+			<identifier value = "friend.karma.250" />
+			<title value = "Good Samaritan" />
+			<description value = "Earn a very good karma" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new ChatCondition() {
+				@Override
+				public boolean fire(final Player player, final Sentence sentence, final Entity entity) {
+					return player.getKarma()>250;
+				}
+			}" />
+		</attributes>
+	</achievement>
+	
+		<achievement name="seasonaltest">
+		<type class="achievements" subclass="friend.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FriendAchievementFactory"/>
+		<attributes>
+			<identifier value = "friend.meet.seasonal" />
+			<title value = "Still Believing" />
+			<description value = "Meet Santa Claus and Easter Bunny" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new AndCondition(new QuestWithPrefixCompletedCondition('meet_santa_'), new QuestWithPrefixCompletedCondition('meet_bunny_'))" />
+		</attributes>
+	</achievement>
+</achievements>

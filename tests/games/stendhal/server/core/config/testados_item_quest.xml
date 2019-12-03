@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="supportertest">
+		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "quest.special.daily_item.0010" />
+			<title value = "Ados' Supporter" />
+			<description value = "Finish daily item quest 10 times" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 9)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="providertest">
+		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "quest.special.daily_item.0050" />
+			<title value = "Ados' Provider" />
+			<description value = "Finish daily item quest 50 times" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 49)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="suppliertest">
+		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "quest.special.daily_item.0100" />
+			<title value = "Ados' Supplier" />
+			<description value = "Finish daily item quest 100 times" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 99)" />
+		</attributes>
+	</achievement>
+
+	<achievement name="stockpilertest">
+		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "quest.special.daily_item.0250" />
+			<title value = "Ados' Stockpiler" />
+			<description value = "Finish daily item quest 250 times" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 249)" />
+		</attributes>
+	</achievement>
+
+	<achievement name="hoardertest">
+		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
+		<attributes>
+			<identifier value = "quest.special.daily_item.0500" />
+			<title value = "Ados' Hoarder" />
+			<description value = "Finish daily item quest 500 times" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 499)" />
+		</attributes>
+	</achievement>
+</achievements>

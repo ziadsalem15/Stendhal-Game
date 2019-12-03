@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="semostest">
+		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
+		<attributes>
+			<identifier value = "zone.interior.semos" />
+			<title value = "Home maker" />
+			<description value = "Visit all interior zones in the Semos region" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerVisitedZonesInRegionCondition('semos', Boolean.FALSE, Boolean.FALSE)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="nalwortest">
+		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
+		<attributes>
+			<identifier value = "zone.interior.nalwor" />
+			<title value = "Elf visitor" />
+			<description value = "Visit all interior zones in the Nalwor region" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerVisitedZonesInRegionCondition('nalwor', Boolean.FALSE, Boolean.FALSE)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="adostest">
+		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
+		<attributes>
+			<identifier value = "zone.interior.ados" />
+			<title value = "Up town guy" />
+			<description value = "Visit all accessible interior zones in the Ados region" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerVisitedZonesInRegionCondition('ados', Boolean.FALSE, Boolean.FALSE)" />
+		</attributes>
+	</achievement>
+
+	<achievement name="wofoltest">
+		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
+		<attributes>
+			<identifier value = "zone.interior.wofolcity" />
+			<title value = "Kobold City" />
+			<description value = "Visit all interior zones in Wo'lof" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerVisitedZonesInRegionCondition('wofol city', Boolean.FALSE, Boolean.FALSE)" />
+		</attributes>
+	</achievement>
+
+	<achievement name="magictest">
+		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
+		<attributes>
+			<identifier value = "zone.interior.magiccity" />
+			<title value = "Magic City" />
+			<description value = "Visit all interior zones in the underground Magic city" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerVisitedZonesInRegionCondition('magic city', Boolean.FALSE, Boolean.FALSE)" />
+		</attributes>
+	</achievement>
+</achievements>

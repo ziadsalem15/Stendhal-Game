@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="ratstest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.rats" />
+			<title value = "Rat Hunter" />
+			<description value = "Kill 15 rats" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('rat', 15)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="exterminatortest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.exterminator" />
+			<title value = "Exterminator" />
+			<description value = "Kill 10 rats of each kind" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'rat', 'caverat', 'razorrat', 'venomrat', 'zombie rat', 'giantrat', 'ratman', 'ratwoman', 'archrat')" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="deertest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.deer" />
+			<title value = "Deer Hunter" />
+			<description value = "Kill 25 deer" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('deer', 25)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="boartest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.boars" />
+			<title value = "Boar Hunter" />
+			<description value = "Kill 20 boar" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('boar', 20)" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="bearstest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.bears" />
+			<title value = "Bear Hunter" />
+			<description value = "Kill 10 black bears, 10 bears and 10 babybears" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'bear', 'black bear', 'babybear')" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="foxestest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.foxes" />
+			<title value = "Fox Hunter" />
+			<description value = "Kill 20 foxes" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('fox', 20)" />
+		</attributes>
+	</achievement>
+	
+	
+	<achievement name="safaritest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.safari" />
+			<title value = "Boar Hunter" />
+			<description value = "Kill 30 tigers, 30 lions and 50 elephants" />
+			<score value = "Achievement.EASY_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new AndCondition(new PlayerHasKilledNumberOfCreaturesCondition('tiger', 30),
+												 new PlayerHasKilledNumberOfCreaturesCondition('lion', 30),
+												 new PlayerHasKilledNumberOfCreaturesCondition('elephant', 50))" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="entstest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.general.ents" />
+			<title value = "Wood Cutter" />
+			<description value = "Kill 10 ents, 10 entwifes and 10 old ents" />
+			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'ent', 'entwife', 'old ent')" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="raretest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.special.rare" />
+			<title value = "Poacher" />
+			<description value = "Kill any rare creature" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new KilledRareCreatureCondition()" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="solotest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.special.all" />
+			<title value = "Legend" />
+			<description value = "Kill all creatures solo" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new KilledSoloAllCreaturesCondition()" />
+		</attributes>
+	</achievement>
+	
+	<achievement name="teamtest">
+		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
+		<attributes>
+			<identifier value = "fight.special.allshared" />
+			<title value = "Team Player" />
+			<description value = "Kill all creatures in a team" />
+			<score value = "Achievement.HARD_BASE_SCORE" />
+			<active value = "true" />
+			<condition value = "new KilledSharedAllCreaturesCondition()" />
+		</attributes>
+	</achievement>
+	
+</achievements>
