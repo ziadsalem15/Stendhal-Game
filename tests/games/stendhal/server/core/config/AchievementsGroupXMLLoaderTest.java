@@ -34,7 +34,7 @@ import games.stendhal.server.entity.spell.Spell;
 import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.common.game.RPObject;
 import marauroa.common.game.RPObject.ID;
-import import games.stendhal.server.core.config.AchievementsGroupXMLLoader;
+import games.stendhal.server.core.config.AchievementsGroupXMLLoader;
 
 public class AchievementsGroupXMLLoaderTest {
 
