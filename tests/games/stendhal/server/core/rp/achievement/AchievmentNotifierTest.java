@@ -1,4 +1,4 @@
-package games.stendhal.server.core.rp.achievment;
+package games.stendhal.server.core.rp.achievement;
 
 import org.junit.Test;
 
