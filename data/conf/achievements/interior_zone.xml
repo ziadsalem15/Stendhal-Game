@@ -3,7 +3,7 @@
 	xsi:schemaLocation="stendhal ../achievements.xsd ">
 	
 	<achievement name="semos">
-		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<type class="achievements" subclass="interior_zone" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
 		<attributes>
 			<identifier value = "zone.interior.semos" />
@@ -16,7 +16,7 @@
 	</achievement>
 	
 	<achievement name="nalwor">
-		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<type class="achievements" subclass="interior_zone" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
 		<attributes>
 			<identifier value = "zone.interior.nalwor" />
@@ -29,7 +29,7 @@
 	</achievement>
 	
 	<achievement name="ados">
-		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<type class="achievements" subclass="interior_zone" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
 		<attributes>
 			<identifier value = "zone.interior.ados" />
@@ -42,7 +42,7 @@
 	</achievement>
 
 	<achievement name="wofol">
-		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<type class="achievements" subclass="interior_zone" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
 		<attributes>
 			<identifier value = "zone.interior.wofolcity" />
@@ -55,7 +55,7 @@
 	</achievement>
 
 	<achievement name="magic">
-		<type class="achievements" subclass="interior_zone.png" tileid="-1"/>
+		<type class="achievements" subclass="interior_zone" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.InteriorZoneAchievementFactory"/>
 		<attributes>
 			<identifier value = "zone.interior.magiccity" />

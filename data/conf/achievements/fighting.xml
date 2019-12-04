@@ -3,7 +3,7 @@
 	xsi:schemaLocation="stendhal ../achievements.xsd ">
 	
 	<achievement name="rats">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.rats" />
@@ -16,7 +16,7 @@
 	</achievement>
 	
 	<achievement name="exterminator">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.exterminator" />
@@ -29,7 +29,7 @@
 	</achievement>
 	
 	<achievement name="deer">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.deer" />
@@ -42,7 +42,7 @@
 	</achievement>
 	
 	<achievement name="boar">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.boars" />
@@ -55,7 +55,7 @@
 	</achievement>
 	
 	<achievement name="bears">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.bears" />
@@ -68,7 +68,7 @@
 	</achievement>
 	
 	<achievement name="foxes">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.foxes" />
@@ -82,7 +82,7 @@
 	
 	
 	<achievement name="safari">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.safari" />
@@ -97,7 +97,7 @@
 	</achievement>
 	
 	<achievement name="ents">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.general.ents" />
@@ -110,7 +110,7 @@
 	</achievement>
 	
 	<achievement name="rare">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.special.rare" />
@@ -123,7 +123,7 @@
 	</achievement>
 	
 	<achievement name="solo">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.special.all" />
@@ -136,7 +136,7 @@
 	</achievement>
 	
 	<achievement name="team">
-		<type class="achievements" subclass="fighting.png" tileid="-1"/>
+		<type class="achievements" subclass="fighting" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.FightingAchievementFactory"/>
 		<attributes>
 			<identifier value = "fight.special.allshared" />

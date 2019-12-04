@@ -3,7 +3,7 @@
 	xsi:schemaLocation="stendhal ../achievements.xsd ">
 	
 	<achievement name="pocket_money">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.money.100" />
@@ -17,7 +17,7 @@
 	
 		
 	<achievement name="rich">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.money.1000000" />
@@ -31,7 +31,7 @@
 	
 		
 	<achievement name="red">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.red" />
@@ -44,7 +44,7 @@
 	</achievement>
 		
 	<achievement name="blue">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.blue" />
@@ -57,7 +57,7 @@
 	</achievement>
 		
 	<achievement name="elvish">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.elvish" />
@@ -70,7 +70,7 @@
 	</achievement>
 		
 	<achievement name="shadow">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.shadow" />
@@ -83,7 +83,7 @@
 	</achievement>
 		
 	<achievement name="chaos">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.chaos" />
@@ -97,7 +97,7 @@
 	
 		
 	<achievement name="golden">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.golden" />
@@ -111,7 +111,7 @@
 	
 		
 	<achievement name="black">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.black" />
@@ -124,7 +124,7 @@
 	</achievement>
 		
 	<achievement name="mainio">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.mainio" />
@@ -138,7 +138,7 @@
 
 		
 	<achievement name="xeno">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.set.xeno" />
@@ -151,7 +151,7 @@
 	</achievement>
 	
 	<achievement name="dragon">
-		<type class="achievements" subclass="item.png" tileid="-1"/>
+		<type class="achievements" subclass="item" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.ItemAchievementFactory"/>
 		<attributes>
 			<identifier value = "item.cloak.dragon" />

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="stendhal ../achievements.xsd ">
 	
 	<achievement name="supporter">
-		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<type class="achievements" subclass="quest_ados_items" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
 		<attributes>
 			<identifier value = "quest.special.daily_item.0010" />
@@ -16,7 +16,7 @@
 	</achievement>
 	
 	<achievement name="provider">
-		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<type class="achievements" subclass="quest_ados_items" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
 		<attributes>
 			<identifier value = "quest.special.daily_item.0050" />
@@ -29,7 +29,7 @@
 	</achievement>
 	
 	<achievement name="supplier">
-		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<type class="achievements" subclass="quest_ados_items" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
 		<attributes>
 			<identifier value = "quest.special.daily_item.0100" />
@@ -42,7 +42,7 @@
 	</achievement>
 
 	<achievement name="stockpiler">
-		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<type class="achievements" subclass="quest_ados_items" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
 		<attributes>
 			<identifier value = "quest.special.daily_item.0250" />
@@ -55,7 +55,7 @@
 	</achievement>
 
 	<achievement name="hoarder">
-		<type class="achievements" subclass="quest_ados_items.png" tileid="-1"/>
+		<type class="achievements" subclass="quest_ados_items" tileid="-1"/>
 		<implementation class-name="games.stendhal.server.AdosItemQuestAchievementsFactory"/>
 		<attributes>
 			<identifier value = "quest.special.daily_item.0500" />
