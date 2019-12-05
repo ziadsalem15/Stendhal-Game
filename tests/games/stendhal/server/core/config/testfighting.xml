@@ -9,7 +9,7 @@
 			<identifier value = "fight.general.rats" />
 			<title value = "Rat Hunter" />
 			<description value = "Kill 15 rats" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('rat', 15)" />
 		</attributes>
@@ -22,7 +22,7 @@
 			<identifier value = "fight.general.exterminator" />
 			<title value = "Exterminator" />
 			<description value = "Kill 10 rats of each kind" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'rat', 'caverat', 'razorrat', 'venomrat', 'zombie rat', 'giantrat', 'ratman', 'ratwoman', 'archrat')" />
 		</attributes>
@@ -35,7 +35,7 @@
 			<identifier value = "fight.general.deer" />
 			<title value = "Deer Hunter" />
 			<description value = "Kill 25 deer" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('deer', 25)" />
 		</attributes>
@@ -48,7 +48,7 @@
 			<identifier value = "fight.general.boars" />
 			<title value = "Boar Hunter" />
 			<description value = "Kill 20 boar" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('boar', 20)" />
 		</attributes>
@@ -61,7 +61,7 @@
 			<identifier value = "fight.general.bears" />
 			<title value = "Bear Hunter" />
 			<description value = "Kill 10 black bears, 10 bears and 10 babybears" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'bear', 'black bear', 'babybear')" />
 		</attributes>
@@ -74,7 +74,7 @@
 			<identifier value = "fight.general.foxes" />
 			<title value = "Fox Hunter" />
 			<description value = "Kill 20 foxes" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition('fox', 20)" />
 		</attributes>
@@ -88,7 +88,7 @@
 			<identifier value = "fight.general.safari" />
 			<title value = "Boar Hunter" />
 			<description value = "Kill 30 tigers, 30 lions and 50 elephants" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new AndCondition(new PlayerHasKilledNumberOfCreaturesCondition('tiger', 30),
 												 new PlayerHasKilledNumberOfCreaturesCondition('lion', 30),
@@ -103,7 +103,7 @@
 			<identifier value = "fight.general.ents" />
 			<title value = "Wood Cutter" />
 			<description value = "Kill 10 ents, 10 entwifes and 10 old ents" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerHasKilledNumberOfCreaturesCondition(10, 'ent', 'entwife', 'old ent')" />
 		</attributes>
@@ -116,7 +116,7 @@
 			<identifier value = "fight.special.rare" />
 			<title value = "Poacher" />
 			<description value = "Kill any rare creature" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new KilledRareCreatureCondition()" />
 		</attributes>
@@ -129,7 +129,7 @@
 			<identifier value = "fight.special.all" />
 			<title value = "Legend" />
 			<description value = "Kill all creatures solo" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new KilledSoloAllCreaturesCondition()" />
 		</attributes>
@@ -142,7 +142,7 @@
 			<identifier value = "fight.special.allshared" />
 			<title value = "Team Player" />
 			<description value = "Kill all creatures in a team" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new KilledSharedAllCreaturesCondition()" />
 		</attributes>

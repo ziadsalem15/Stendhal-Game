@@ -9,7 +9,7 @@
 			<identifier value="quest.special.kill_enemy_army.0005"/>
 			<title value="Sergeant"/>
 			<description value="Finish Kill Enemy Army quest 5 times"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('kill_enemy_army', IDX, 4)"/>
 		</attributes>
@@ -22,7 +22,7 @@
 			<identifier value="quest.special.kill_enemy_army.0025"/>
 			<title value="Major"/>
 			<description value="Finish Kill Enemy Army quest 25 times"/>
-			<score value="Achievement.HARD_BASE_SCORE"/>
+			<score value="5"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('kill_enemy_army', IDX, 24)"/>
 		</attributes>
@@ -35,7 +35,7 @@
 			<identifier value="quest.special.kill_enemy_army.0100"/>
 			<title value="Major General"/>
 			<description value="Finish Kill Enemy Army quest 100 times"/>
-			<score value="Achievement.HARD_BASE_SCORE"/>
+			<score value="5"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('kill_enemy_army', IDX, 99)"/>
 		</attributes>

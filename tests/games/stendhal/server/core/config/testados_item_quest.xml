@@ -9,7 +9,7 @@
 			<identifier value = "quest.special.daily_item.0010" />
 			<title value = "Ados' Supporter" />
 			<description value = "Finish daily item quest 10 times" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 9)" />
 		</attributes>
@@ -22,7 +22,7 @@
 			<identifier value = "quest.special.daily_item.0050" />
 			<title value = "Ados' Provider" />
 			<description value = "Finish daily item quest 50 times" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 49)" />
 		</attributes>
@@ -35,7 +35,7 @@
 			<identifier value = "quest.special.daily_item.0100" />
 			<title value = "Ados' Supplier" />
 			<description value = "Finish daily item quest 100 times" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 99)" />
 		</attributes>
@@ -48,7 +48,7 @@
 			<identifier value = "quest.special.daily_item.0250" />
 			<title value = "Ados' Stockpiler" />
 			<description value = "Finish daily item quest 250 times" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 249)" />
 		</attributes>
@@ -61,7 +61,7 @@
 			<identifier value = "quest.special.daily_item.0500" />
 			<title value = "Ados' Hoarder" />
 			<description value = "Finish daily item quest 500 times" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new QuestStateGreaterThanCondition('daily_item', 2, 499)" />
 		</attributes>

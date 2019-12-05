@@ -54,6 +54,7 @@ public class DefaultAchievement {
 	public String getDescription() {
 		return description;
 	}
+
 	
 	public String getName() {
 		return name;
@@ -63,14 +64,6 @@ public class DefaultAchievement {
 		return getImplementationClass();
 	}
 	
-
 	
-//	public void setImplementation(final Class< ? > implementation) {
-//		this.implementation = implementation;
-//		creator = buildCreator(implementation);
-//	}
-//	
-//	public Class< ? > getImplementation() {
-//		return implementation;
-//	}
+
 }
