@@ -14,7 +14,12 @@ public class AchievmentNotifierTest {
 	public void initializeTest()
 	{
 		AchievementNotifier instance1 = AchievementNotifier.get();
-		instance1.initialize();	
+		instance1.initialize();		
+		final Player player = PlayerTestHelper.createPlayer("player");
+		instance1.onItemLoot(player);
+		String achievementIdentifier = null;
+		instance1.awardAchievementIfNotYetReached(player, achievementIdentifier);
+
 	}
 	@Test
 	public void onItemLootTest()
