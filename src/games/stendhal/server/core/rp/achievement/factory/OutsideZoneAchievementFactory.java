@@ -1,12 +1,18 @@
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesCondition;
-import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesInRegionCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesCondition;
+//import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesInRegionCondition;
 /**
  * Factory for zone achievements
  *
@@ -20,8 +26,11 @@ public class OutsideZoneAchievementFactory extends AbstractAchievementFactory {
 	}
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		Collection<Achievement> list = new LinkedList<Achievement>();
+	public Collection<DefaultAchievement> createAchievements() {
+		Collection<DefaultAchievement> achievements = new LinkedList<DefaultAchievement>();
+		//create loader instance
+				AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+				/*
 		//All outside zone achievements
 		list.add(createAchievement("zone.outside.semos", "Junior Explorer", "Visit all outside zones in the Semos region",
 									Achievement.EASY_BASE_SCORE, true,
@@ -51,8 +60,26 @@ public class OutsideZoneAchievementFactory extends AbstractAchievementFactory {
 		list.add(createAchievement("zone.special.bank", "Safe Deposit", "Visit all banks",
 									Achievement.MEDIUM_BASE_SCORE, true,
 									new PlayerVisitedZonesCondition("int_semos_bank", "int_nalwor_bank", "int_kirdneh_bank",
-																	"int_fado_bank", "int_magic_bank", "int_ados_bank")));
-		return list;
+																	"int_fado_bank", "int_magic_bank", "int_ados_bank"))); */
+				URI achievementURI = null;
+				try {
+					achievementURI = new URI("achievements/outside_zone.xml");
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				//try to load the achievements list from the resource file
+				
+				try {
+					achievements = xpLoader.load(achievementURI);
+				} catch (SAXException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				//return achievements list
+		return achievements;
 	}
 
 }

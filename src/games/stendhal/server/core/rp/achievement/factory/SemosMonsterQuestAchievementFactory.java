@@ -12,13 +12,19 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition;
 /**
  * Factory for quest achievements
  *
@@ -27,9 +33,11 @@ import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition
 public class SemosMonsterQuestAchievementFactory extends AbstractAchievementFactory {
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> questAchievements = new LinkedList<Achievement>();
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> questAchievements = new LinkedList<DefaultAchievement>();
+		AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
 		//daily monster quest achievements
+		/*
 		questAchievements.add(createAchievement("quest.special.daily.0010", "Semos' Protector", "Finish daily monster quest 10 times",
 												Achievement.EASY_BASE_SCORE, true, new QuestStateGreaterThanCondition("daily", 2, 9)));
 		questAchievements.add(createAchievement("quest.special.daily.0050", "Semos' Guardian", "Finish daily monster quest 50 times",
@@ -39,7 +47,26 @@ public class SemosMonsterQuestAchievementFactory extends AbstractAchievementFact
 		questAchievements.add(createAchievement("quest.special.daily.0250", "Semos' Champion", "Finish daily monster quest 250 times",
 												Achievement.MEDIUM_BASE_SCORE, true, new QuestStateGreaterThanCondition("daily", 2, 249)));
 		questAchievements.add(createAchievement("quest.special.daily.0500", "Semos' Vanquisher", "Finish daily monster quest 500 times",
-												Achievement.HARD_BASE_SCORE, true, new QuestStateGreaterThanCondition("daily", 2, 499)));
+												Achievement.HARD_BASE_SCORE, true, new QuestStateGreaterThanCondition("daily", 2, 499)));*/
+
+												URI achievementURI = null;
+												try {
+													achievementURI = new URI("achievements/semos_monster_quest.xml");
+												} catch (URISyntaxException e) {
+													// TODO Auto-generated catch block
+													e.printStackTrace();
+												}
+												
+												//try to load the achievements list from the resource file
+												
+												try {
+													questAchievements = xpLoader.load(achievementURI);
+												} catch (SAXException e) {
+													// TODO Auto-generated catch block
+													e.printStackTrace();
+												}
+												
+												//return achievements list
 
 		return questAchievements;
 	}

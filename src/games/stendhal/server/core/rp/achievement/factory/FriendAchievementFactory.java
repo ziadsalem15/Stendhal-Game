@@ -11,14 +11,20 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.common.parser.Sentence;
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+//import games.stendhal.common.parser.Sentence;
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.core.rp.achievement.condition.QuestWithPrefixCompletedCondition;
+//import games.stendhal.server.core.rp.achievement.condition.QuestWithPrefixCompletedCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;/*
 import games.stendhal.server.entity.Entity;
 import games.stendhal.server.entity.npc.ChatCondition;
 import games.stendhal.server.entity.npc.condition.AndCondition;
@@ -27,7 +33,7 @@ import games.stendhal.server.entity.npc.condition.QuestCompletedCondition;
 import games.stendhal.server.entity.npc.condition.QuestNotInStateCondition;
 import games.stendhal.server.entity.npc.condition.QuestStartedCondition;
 import games.stendhal.server.entity.npc.condition.QuestStateStartsWithCondition;
-import games.stendhal.server.entity.player.Player;
+import games.stendhal.server.entity.player.Player;*/
 /**
  * Factory for quest achievements
  *
@@ -36,9 +42,10 @@ import games.stendhal.server.entity.player.Player;
 public class FriendAchievementFactory extends AbstractAchievementFactory {
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> achievements = new LinkedList<Achievement>();
-
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> achievements = new LinkedList<DefaultAchievement>();
+		AchievementsXMLLoader frLoader = new AchievementsXMLLoader();
+		/*
 	    // TODO: add Pacifist achievement for not participating in pvp for 6 months or more (last_pvp_action_time)
 
 		// Befriend Susi and complete quests for all children
@@ -102,7 +109,26 @@ public class FriendAchievementFactory extends AbstractAchievementFactory {
 		// meet Santa Claus and Easter Bunny
 		achievements.add(createAchievement("friend.meet.seasonal", "Still Believing", "Meet Santa Claus and Easter Bunny",
 												Achievement.EASY_BASE_SCORE, true, new AndCondition(new QuestWithPrefixCompletedCondition("meet_santa_"), new QuestWithPrefixCompletedCondition("meet_bunny_"))));
-
+			*/
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/friend.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			achievements = frLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list
+		
 		return achievements;
 	}
 

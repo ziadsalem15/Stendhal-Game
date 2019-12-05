@@ -11,18 +11,24 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.engine.SingletonRepository;
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.engine.SingletonRepository;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.behaviour.journal.ProducerRegister;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+/*import games.stendhal.server.entity.npc.behaviour.journal.ProducerRegister;
 import games.stendhal.server.entity.npc.condition.AndCondition;
 import games.stendhal.server.entity.npc.condition.PlayerProducedNumberOfItemsCondition;
 import games.stendhal.server.entity.npc.condition.QuestCompletedCondition;
-import games.stendhal.server.entity.npc.condition.QuestStateStartsWithCondition;
+import games.stendhal.server.entity.npc.condition.QuestStateStartsWithCondition;*/
 /**
  * Factory for production achievements
  *
@@ -31,9 +37,11 @@ import games.stendhal.server.entity.npc.condition.QuestStateStartsWithCondition;
 public class ProductionAchievementFactory extends AbstractAchievementFactory {
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> achievements = new LinkedList<Achievement>();
-
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> achievements = new LinkedList<DefaultAchievement>();
+		//create loader instance
+		AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+/*
 		final ProducerRegister producerRegister = SingletonRepository.getProducerRegister();
 
 	    final List<String> foodlist = producerRegister.getProducedItemNames("food");
@@ -73,8 +81,25 @@ public class ProductionAchievementFactory extends AbstractAchievementFactory {
 
 		achievements.add(createAchievement("production.flour.1000", "Jenny's Assistant", "Produce 1000 flour",
 				Achievement.EASY_BASE_SCORE, true,
-				new PlayerProducedNumberOfItemsCondition(1000, "flour")));
-
+				new PlayerProducedNumberOfItemsCondition(1000, "flour")));*/
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/production.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			achievements = xpLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list
 		return achievements;
 	}
 

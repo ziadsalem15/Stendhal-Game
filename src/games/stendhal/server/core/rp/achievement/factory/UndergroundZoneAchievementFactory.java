@@ -1,11 +1,17 @@
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesInRegionCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.PlayerVisitedZonesInRegionCondition;
 /**
  * Factory for underground zone achievements
  *
@@ -19,8 +25,11 @@ public class UndergroundZoneAchievementFactory extends AbstractAchievementFactor
 	}
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		Collection<Achievement> list = new LinkedList<Achievement>();
+	public Collection<DefaultAchievement> createAchievements() {
+		Collection<DefaultAchievement> list = new LinkedList<DefaultAchievement>();
+		//create loader instance
+				AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+		/*
 		//All below ground achievements
 		list.add(createAchievement("zone.underground.semos", "Canary", "Visit all underground zones in the Semos region",
 									Achievement.MEDIUM_BASE_SCORE, true,
@@ -36,7 +45,26 @@ public class UndergroundZoneAchievementFactory extends AbstractAchievementFactor
 									new PlayerVisitedZonesInRegionCondition("amazon", Boolean.TRUE, Boolean.FALSE)));
 		list.add(createAchievement("zone.underground.ados", "Deep Dweller", "Visit all underground zones in the Ados region",
 									Achievement.MEDIUM_BASE_SCORE, true,
-									new PlayerVisitedZonesInRegionCondition("ados", Boolean.TRUE, Boolean.FALSE)));
+									new PlayerVisitedZonesInRegionCondition("ados", Boolean.TRUE, Boolean.FALSE)));*/
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/underground_zone.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			list = xpLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list		
+									
 		return list;
 	}
 
