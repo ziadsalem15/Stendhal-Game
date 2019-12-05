@@ -16,8 +16,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import games.stendhal.server.core.config.AchievementGroupsXMLLoader;
 import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 import games.stendhal.server.entity.npc.ChatCondition;
 /**
  * Factory class for achievements creation with a fixed category
@@ -25,6 +27,8 @@ import games.stendhal.server.entity.npc.ChatCondition;
  * @author madmetzger
  */
 public abstract class AbstractAchievementFactory {
+	
+	
 
 	/**
 	 * @return the category the factory should use
@@ -36,7 +40,7 @@ public abstract class AbstractAchievementFactory {
 	 *
 	 * @return the achievments
 	 */
-	public abstract Collection<Achievement> createAchievements();
+	public abstract Collection<DefaultAchievement> createAchievements();
 
 	/**
 	 * Creates a single achievement
@@ -56,23 +60,41 @@ public abstract class AbstractAchievementFactory {
 	 * Create a list of all known achievement factories
 	 * @return the list of factories
 	 */
-	public static List<AbstractAchievementFactory> createFactories() {
-		List<AbstractAchievementFactory> list = new LinkedList<AbstractAchievementFactory>();
-		//add new created factories here
-		list.add(new AdosItemQuestAchievementsFactory());
-		list.add(new ExperienceAchievementFactory());
-		list.add(new FightingAchievementFactory());
-		list.add(new FriendAchievementFactory());
-		list.add(new InteriorZoneAchievementFactory());
-		list.add(new ItemAchievementFactory());
-		list.add(new ObtainAchievementsFactory());
-		list.add(new OutsideZoneAchievementFactory());
-		list.add(new ProductionAchievementFactory());
-		list.add(new QuestAchievementFactory());
-		list.add(new SemosMonsterQuestAchievementFactory());
-		list.add(new UndergroundZoneAchievementFactory());
-		list.add(new KirdnehItemAchievementFactory());
-		list.add(new MithrilbourghEnemyArmyAchievementFactory());
+	public static List<AchievementGroupsXMLLoader> createFactories() {
+		
+		// create loaders for each factory type of achieve
+		AchievementGroupsXMLLoader AdosItemQuestAchievementLoader = new AchievementGroupsXMLLoader("achievements/ados_item_quest.xml");
+		AchievementGroupsXMLLoader ExperienceAchievementLoader = new AchievementGroupsXMLLoader("achievements/experience.xml");
+		AchievementGroupsXMLLoader FightingAchievementLoader = new AchievementGroupsXMLLoader("achievements/fighting.xml");
+		AchievementGroupsXMLLoader FriendAchievementLoader = new AchievementGroupsXMLLoader("achievements/friend.xml");
+		AchievementGroupsXMLLoader InteriorZoneAchievementLoader = new AchievementGroupsXMLLoader("achievements/interior_zone.xml");
+		AchievementGroupsXMLLoader ItemAchievementLoader = new AchievementGroupsXMLLoader("achievements/item.xml");
+		AchievementGroupsXMLLoader ObtainAchievementsLoader = new AchievementGroupsXMLLoader("achievements/obtain.xml");
+		AchievementGroupsXMLLoader OutsideZoneAchievementLoader = new AchievementGroupsXMLLoader("achievements/outside_zone.xml");
+		AchievementGroupsXMLLoader ProductionAchievementLoader = new AchievementGroupsXMLLoader("achievements/production.xml");
+		AchievementGroupsXMLLoader QuestAchievementLoader = new AchievementGroupsXMLLoader("achievements/quest.xml");
+		AchievementGroupsXMLLoader SemosMonsterQuestAchievementLoader = new AchievementGroupsXMLLoader("achievements/semos_monster_quest.xml");
+		AchievementGroupsXMLLoader UndergroundZoneAchievementLoader = new AchievementGroupsXMLLoader("achievements/underground_zone.xml");
+		AchievementGroupsXMLLoader KirdnehItemAchievementLoader = new AchievementGroupsXMLLoader("achievements/kirdneh_item.xml");
+		AchievementGroupsXMLLoader MithrilbourghEnemyArmyAchievementLoader = new AchievementGroupsXMLLoader("achievements/mithrilbourgh_enemy_army.xml");
+		
+		
+		List<AchievementGroupsXMLLoader> list = new LinkedList<AchievementGroupsXMLLoader>();
+		//add loaders into the list
+		list.add(AdosItemQuestAchievementLoader);
+		list.add(ExperienceAchievementLoader);
+		list.add(FightingAchievementLoader);
+		list.add(FriendAchievementLoader);
+		list.add(InteriorZoneAchievementLoader);
+		list.add(ItemAchievementLoader);
+		list.add(ObtainAchievementsLoader);
+		list.add(OutsideZoneAchievementLoader);
+		list.add(ProductionAchievementLoader);
+		list.add(QuestAchievementLoader);
+		list.add(SemosMonsterQuestAchievementLoader);
+		list.add(UndergroundZoneAchievementLoader);
+		list.add(KirdnehItemAchievementLoader);
+		list.add(MithrilbourghEnemyArmyAchievementLoader);
 		return list;
 	}
 }
