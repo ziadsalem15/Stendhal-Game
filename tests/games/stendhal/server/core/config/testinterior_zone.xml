@@ -9,7 +9,7 @@
 			<identifier value = "zone.interior.semos" />
 			<title value = "Home maker" />
 			<description value = "Visit all interior zones in the Semos region" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerVisitedZonesInRegionCondition('semos', Boolean.FALSE, Boolean.FALSE)" />
 		</attributes>
@@ -22,7 +22,7 @@
 			<identifier value = "zone.interior.nalwor" />
 			<title value = "Elf visitor" />
 			<description value = "Visit all interior zones in the Nalwor region" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerVisitedZonesInRegionCondition('nalwor', Boolean.FALSE, Boolean.FALSE)" />
 		</attributes>
@@ -35,7 +35,7 @@
 			<identifier value = "zone.interior.ados" />
 			<title value = "Up town guy" />
 			<description value = "Visit all accessible interior zones in the Ados region" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerVisitedZonesInRegionCondition('ados', Boolean.FALSE, Boolean.FALSE)" />
 		</attributes>
@@ -48,7 +48,7 @@
 			<identifier value = "zone.interior.wofolcity" />
 			<title value = "Kobold City" />
 			<description value = "Visit all interior zones in Wo'lof" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerVisitedZonesInRegionCondition('wofol city', Boolean.FALSE, Boolean.FALSE)" />
 		</attributes>
@@ -61,7 +61,7 @@
 			<identifier value = "zone.interior.magiccity" />
 			<title value = "Magic City" />
 			<description value = "Visit all interior zones in the underground Magic city" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerVisitedZonesInRegionCondition('magic city', Boolean.FALSE, Boolean.FALSE)" />
 		</attributes>

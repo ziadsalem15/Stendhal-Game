@@ -2,6 +2,7 @@ package games.stendhal.server.core.config;
 
 import static org.hamcrest.CoreMatchers.is;
 //import static org.hamcrest.CoreMatchers.notNullValue;
+//import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
@@ -17,7 +18,6 @@ import org.xml.sax.SAXException;
 
 
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
-
 import games.stendhal.server.maps.MockStendlRPWorld;
 
 
@@ -47,9 +47,25 @@ public class AchievementGroupsXMLLoaderTest {
 	 */
 	@Test
 	public void testLoad() throws URISyntaxException, SAXException, IOException {
-		AchievementGroupsXMLLoader loader = new AchievementGroupsXMLLoader(new URI("testachievement.xml"));
+		URI myUri = new URI("testachievements.xml");
+		AchievementGroupsXMLLoader loader = new AchievementGroupsXMLLoader(myUri);
 		List<DefaultAchievement> list = loader.load();
-		assertThat(Boolean.valueOf(list.isEmpty()), is(Boolean.TRUE));
+		assertThat(Boolean.valueOf(list.isEmpty()), is(Boolean.FALSE));
+		DefaultAchievement achievement = list.get(0);
+		assertThat(achievement.getName(), is("supportertest"));
+		//assertThat(achievement.getImplementationClass(), notNullValue());
+		//assertThat(achievement.getImplementationClass().getName(), is("games.stendhal.server.AdosItemQuestAchievementsFactory"));
+		
+		//assertThat(achievement.getDescription(),is("Finish daily item quest 10 times"));
+	}
+	
+	@Test
+	public void testLoadString() throws URISyntaxException, SAXException, IOException {
+		URI myUri = new URI("testachievements.xml");
+
+		AchievementGroupsXMLLoader loader = new AchievementGroupsXMLLoader(myUri);
+		List<DefaultAchievement> list = loader.load();
+		assertThat(Boolean.valueOf(list.isEmpty()), is(Boolean.FALSE));
 		
 		//assertThat(ach.getImplementationClass(), notNullValue());
 		//assertThat(ach.getImplementationClass().getName(), is("games.stendhal.server.core.rp.achievement"));
@@ -59,5 +75,4 @@ public class AchievementGroupsXMLLoaderTest {
 		
 		
 	}
-	
 }

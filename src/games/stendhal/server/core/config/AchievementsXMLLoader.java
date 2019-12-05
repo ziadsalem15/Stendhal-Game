@@ -20,8 +20,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 
-
-public class AchievementsXMLLoader extends DefaultHandler{
+public final class AchievementsXMLLoader extends DefaultHandler {
 
 	/** the logger instance. */
 	private static final Logger LOGGER = Logger.getLogger(AchievementsXMLLoader.class);
@@ -52,6 +51,7 @@ public class AchievementsXMLLoader extends DefaultHandler{
 	private Map<String, String> attributes;
 	
 	private boolean condition;
+
 	
 	public List<DefaultAchievement> load(final URI uri) throws SAXException {
 		list = new LinkedList<DefaultAchievement>();

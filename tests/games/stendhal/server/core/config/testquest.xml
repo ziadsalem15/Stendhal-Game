@@ -9,7 +9,7 @@
 			<identifier value="quest.special.elf_princess.0025"/>
 			<title value="Faiumoni's Casanova"/>
 			<description value="Finish elf princess quest 25 times"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('elf_princess', 2, 24)"/>
 		</attributes>
@@ -23,7 +23,7 @@
 			<identifier value="quest.special.kill_monks.0025"/>
 			<title value="Heretic"/>
 			<description value="Finish Kill Monks quest 25 times"/>
-			<score value="Achievement.HARD_BASE_SCORE"/>
+			<score value="5"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('kill_monks', 2, 24)"/>
 		</attributes>
@@ -36,7 +36,7 @@
 			<identifier value="quest.special.maze"/>
 			<title value="Pathfinder"/>
 			<description value="Finish the maze"/>
-			<score value="Achievement.EASY_BASE_SCORE"/>
+			<score value="1"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('maze', 2, 0)"/>
 		</attributes>
@@ -49,7 +49,7 @@
 			<identifier value="quest.deathmatch"/>
 			<title value="Deathmatch Hero"/>
 			<description value="Earn 100,000 points in deathmatch"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestStateGreaterThanCondition('deathmatch_score', 0, 100000)"/>
 		</attributes>
@@ -62,7 +62,7 @@
 			<identifier value="quest.special.semos"/>
 			<title value="Aide to Semos folk"/>
 			<description value="Complete all quests in Semos City"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestsInRegionCompletedCondition(Region.SEMOS_CITY)"/>
 		</attributes>
@@ -75,7 +75,7 @@
 			<identifier value="quest.special.ados"/>
 			<title value="Helper of Ados city dwellers"/>
 			<description value="Complete all quests in Ados City"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestsInRegionCompletedCondition(Region.ADOS_CITY)"/>
 		</attributes>
@@ -88,7 +88,7 @@
 			<identifier value="quest.count.80"/>
 			<title value="Quest Junkie"/>
 			<description value="Complete at least 80 quests"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new QuestCountCompletedCondition(80)"/>
 		</attributes>

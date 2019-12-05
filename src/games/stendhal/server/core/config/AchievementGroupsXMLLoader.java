@@ -48,27 +48,38 @@ public class AchievementGroupsXMLLoader extends DefaultHandler {
 		 *
 		 * @return list of all achievements.
 		 */
-		public List<DefaultAchievement> load() {
+		public List<DefaultAchievement> load() throws SAXException, IOException {
 			final GroupsXMLLoader groupsLoader = new GroupsXMLLoader(uri);
+
+			final List<URI> groups = groupsLoader.load();
+			final AchievementsXMLLoader loader = new AchievementsXMLLoader();
+
 			final List<DefaultAchievement> list = new LinkedList<DefaultAchievement>();
-			try {
-				List<URI> groups = groupsLoader.load();
-
-				// Load each group
-				for (final URI tempUri : groups) {
-					final AchievementsXMLLoader loader = new AchievementsXMLLoader();
-
-					try {
-						list.addAll(loader.load(tempUri));
-					} catch (final SAXException ex) {
-						LOGGER.error("Error loading creature group: " + tempUri, ex);
-					}
-				}
-			} catch (SAXException e) {
-				LOGGER.error(e, e);
-			} catch (IOException e) {
-				LOGGER.error(e, e);
+			for (final URI groupUri : groups) {
+				LOGGER.debug("Loading spell group [" + groupUri + "]");
+				list.addAll(loader.load(groupUri));
 			}
+
+//			final GroupsXMLLoader groupsLoader = new GroupsXMLLoader(uri);
+//			final List<DefaultAchievement> list = new LinkedList<DefaultAchievement>();
+//			try {
+//				List<URI> groups = groupsLoader.load();
+//
+//				// Load each group
+//				for (final URI tempUri : groups) {
+//					final AchievementsXMLLoader loader = new AchievementsXMLLoader();
+//
+//					try {
+//						list.addAll(loader.load(tempUri));
+//					} catch (final SAXException ex) {
+//						LOGGER.error("Error loading creature group: " + tempUri, ex);
+//					}
+//				}
+//			} catch (SAXException e) {
+//				LOGGER.error(e, e);
+//			} catch (IOException e) {
+//				LOGGER.error(e, e);
+//			}
 			return list;
 		}
 		
