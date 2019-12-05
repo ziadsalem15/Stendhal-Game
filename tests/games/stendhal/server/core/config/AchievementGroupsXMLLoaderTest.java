@@ -20,19 +20,31 @@ import games.stendhal.server.maps.MockStendlRPWorld;
 
 public class AchievementGroupsXMLLoaderTest {
 
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@Before
 	public void setUp() {
 		MockStendlRPWorld.get();
 	}
 
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@After
 	public void tearDown() {
 		MockStendlRPWorld.reset();
 	}
 	
+	/**
+	 * Test method for {@link games.stendhal.server.core.config.AchievementsXMLLoader#readZone(org.w3c.dom.Element)}.
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 * @throws SAXException
+	 */
 	@Test
 	public void testLoad() throws URISyntaxException, SAXException, IOException {
-		AchievementGroupsXMLLoader loader = new AchievementGroupsXMLLoader(new URI("testspells.xml"));
+		AchievementGroupsXMLLoader loader = new AchievementGroupsXMLLoader(new URI("testachievement.xml"));
 		List<DefaultAchievement> list = loader.load();
 		assertThat(Boolean.valueOf(list.isEmpty()), is(Boolean.TRUE));
 		//assertThat(ach.getImplementationClass(), notNullValue());
