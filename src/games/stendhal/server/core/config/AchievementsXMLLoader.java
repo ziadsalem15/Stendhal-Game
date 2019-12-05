@@ -18,7 +18,11 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+//import games.stendhal.server.core.rp.achievement.Achievement;
+import games.stendhal.server.core.rp.achievement.Category;
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.ChatCondition;
 
 public final class AchievementsXMLLoader extends DefaultHandler {
 
@@ -34,23 +38,40 @@ public final class AchievementsXMLLoader extends DefaultHandler {
 //	private String description;
 	
 	private String text;
-	
-	private String tileid;
-	
+//	
+//	private String tileid;
+//	
 	private boolean attributesTag;
-
+//
+//	private String identifier;
+//	private String title;
+//	private String description;
+//	private boolean active;
+//	private int score;
+	
 	private String identifier;
+
 	private String title;
+
+	private Category category;
+
 	private String description;
+
+	private int baseScore;
+
+	/** is this achievement visible? */
 	private boolean active;
-	private int score;
+
+	private String condition;
+	
+	private String conditionText;
 	
 	private List<DefaultAchievement> list;
 	
 	/** Attributes of the achievement */
 	private Map<String, String> attributes;
 	
-	private boolean condition;
+//	private boolean condition;
 
 	
 	public List<DefaultAchievement> load(final URI uri) throws SAXException {
@@ -116,19 +137,20 @@ public final class AchievementsXMLLoader extends DefaultHandler {
 		} else if (attributesTag && qName.equals("description")) {
 			description = attrs.getValue("value");
 		} else if (attributesTag && qName.equals("score")) {
-			score = Integer.parseInt(attrs.getValue("value"));
+			baseScore = Integer.parseInt(attrs.getValue("value"));
 		} else if (attributesTag && qName.equals("active")) {
 			active = Boolean.parseBoolean("value");
 		} else if (attributesTag && qName.equals("condition")) {
-			condition = Boolean.parseBoolean(attrs.getValue("value"));
+			conditionText = attrs.getValue("value");
+			//condition = new ChatCondition(conditionText);
 		}
 	}
 	
 	@Override
 	public void endElement(final String namespaceURI, final String sName, final String qName) {
 		if (qName.equals("achievement")) {
-			final DefaultAchievement achievement = new DefaultAchievement(clazz, subclass, name, -1);
-			achievement.setAttributes(attributes);
+			final DefaultAchievement achievement = new DefaultAchievement(identifier, title, category, description, baseScore, active, condition);
+//			achievement.setAttributes(attributes);
 			list.add(achievement);
 			}
 		else if (qName.equals("attributes")) {

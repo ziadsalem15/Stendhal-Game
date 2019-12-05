@@ -52,7 +52,7 @@ public class AchievementGroupsXMLLoaderTest {
 		List<DefaultAchievement> list = loader.load();
 		assertThat(Boolean.valueOf(list.isEmpty()), is(Boolean.FALSE));
 		DefaultAchievement achievement = list.get(0);
-		assertThat(achievement.getName(), is("supportertest"));
+		assertThat(achievement.getDescription(), is("Finish daily item quest 10 times"));
 		//assertThat(achievement.getImplementationClass(), notNullValue());
 		//assertThat(achievement.getImplementationClass().getName(), is("games.stendhal.server.AdosItemQuestAchievementsFactory"));
 		

@@ -4,6 +4,9 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import games.stendhal.server.core.rp.achievement.Category;
+//import games.stendhal.server.entity.npc.ChatCondition;
+
 public class DefaultAchievement {
 
 	/** the logger instance. */
@@ -19,25 +22,54 @@ public class DefaultAchievement {
 	private String name;
 
 	/** optional creature description. * */
-	private String description;
 
 	/** Map Tile Id in the way tileset.png:pos. */
 	private int tileid;
-		
-	private String condition;
-	
+			
 	private Map<String, String> attributes = null;
 	
 	private Class< ? > implementation = null;
 
 	private int value;
 	
-	public DefaultAchievement(final String clazz, final String subclazz, final String name, final int tileid) {
-		this.clazz = clazz;
-		this.subclass = subclazz;
-		this.name = name;
-		this.tileid = tileid;
+	private String identifier;
+
+	private String title;
+
+	private Category category;
+
+	private String description;
+
+	private int baseScore;
+
+	/** is this achievement visible? */
+	private boolean active;
+
+	private String condition;
+
+
+
+	/**
+	 * create a new achievement
+	 *
+	 * @param identifier
+	 * @param title
+	 * @param category
+	 * @param description
+	 * @param baseScore
+	 * @param active
+	 * @param condition
+	 */
+	public DefaultAchievement(String identifier, String title, Category category, String description, int baseScore, boolean active, String condition) {
+		this.identifier = identifier;
+		this.title = title;
+		this.category = category;
+		this.condition = condition;
+		this.description = description;
+		this.baseScore = baseScore;
+		this.active = active;
 	}
+
 
 	public Map<String, String> getAttributes() {
 		return attributes;
@@ -56,9 +88,9 @@ public class DefaultAchievement {
 	}
 
 	
-	public String getName() {
-		return name;
-	}
+//	public String getName() {
+//		return title;
+//	}
 
 	public Class<?> getImplementationClass() {
 		return getImplementationClass();

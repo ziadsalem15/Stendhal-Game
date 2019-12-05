@@ -10,7 +10,9 @@ import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 public class AchievementGroupsXMLLoader extends DefaultHandler {
 
 		private static final Logger LOGGER = Logger.getLogger(AchievementGroupsXMLLoader.class);
