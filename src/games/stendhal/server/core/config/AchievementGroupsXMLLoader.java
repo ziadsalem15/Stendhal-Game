@@ -71,5 +71,8 @@ public class AchievementGroupsXMLLoader extends DefaultHandler {
 			}
 			return list;
 		}
+		
+		
+		
 
 }
