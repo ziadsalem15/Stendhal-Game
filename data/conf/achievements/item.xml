@@ -9,7 +9,7 @@
 			<identifier value = "item.money.100" />
 			<title value = "First pocket money" />
 			<description value = "Loot 100 money from creatures" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(100, 'money')" />
 		</attributes>
@@ -23,7 +23,7 @@
 			<identifier value = "item.money.1000000" />
 			<title value = "You don't need it anymore" />
 			<description value = "Loot 1000000 money from creatures" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1000000, 'money')" />
 		</attributes>
@@ -37,7 +37,7 @@
 			<identifier value = "item.set.red" />
 			<title value = "Amazon's Menace" />
 			<description value = "Loot a complete red equipment set" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'red armor', 'red helmet', 'red cloak', 'red legs', 'red boots', 'red shield')" />
 		</attributes>
@@ -50,7 +50,7 @@
 			<identifier value = "item.set.blue" />
 			<title value = "Feeling Blue" />
 			<description value = "Loot a complete blue equipment set" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'blue armor', 'blue helmet', 'blue striped cloak', 'blue legs', 'blue boots', 'blue shield')" />
 		</attributes>
@@ -63,7 +63,7 @@
 			<identifier value = "item.set.elvish" />
 			<title value = "Nalwor's Bane" />
 			<description value = "Loot a complete elvish equipment set" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'elvish armor', 'elvish helmet', 'elvish cloak', 'elvish legs', 'elvish boots', 'elvish shield')" />
 		</attributes>
@@ -76,7 +76,7 @@
 			<identifier value = "item.set.shadow" />
 			<title value = "Shadow Dweller" />
 			<description value = "Loot a complete shadow equipment set" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'shadow armor', 'shadow helmet', 'shadow cloak', 'shadow legs', 'shadow boots', 'shadow shield')" />
 		</attributes>
@@ -89,7 +89,7 @@
 			<identifier value = "item.set.chaos" />
 			<title value = "Chaotic Looter" />
 			<description value = "Loot a complete chaos equipment set" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'chaos armor', 'chaos helmet', 'chaos cloak', 'chaos legs', 'chaos boots', 'chaos shield')" />
 		</attributes>
@@ -103,7 +103,7 @@
 			<identifier value = "item.set.golden" />
 			<title value = "Golden Boy" />
 			<description value = "Loot a complete golden equipment set" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'golden armor', 'golden helmet', 'golden cloak', 'golden legs', 'golden boots', 'golden shield')" />
 		</attributes>
@@ -117,7 +117,7 @@
 			<identifier value = "item.set.black" />
 			<title value = "Come to the dark side" />
 			<description value = "Loot a complete black equipment set" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'black armor', 'black helmet', 'black cloak', 'black legs', 'black boots', 'black shield')" />
 		</attributes>
@@ -130,7 +130,7 @@
 			<identifier value = "item.set.mainio" />
 			<title value = "Excellent Stuff" />
 			<description value = "Loot a complete mainio equipment set" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'mainio armor', 'mainio helmet', 'mainio cloak', 'mainio legs', 'mainio boots', 'mainio shield')" />
 		</attributes>
@@ -144,7 +144,7 @@
 			<identifier value = "item.set.xeno" />
 			<title value = "A Bit Xenophobic?" />
 			<description value = "Loot a complete xeno equipment set" />
-			<score value = "Achievement.HARD_BASE_SCORE" />
+			<score value = "5" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'xeno armor', 'xeno helmet', 'xeno cloak', 'xeno legs', 'xeno boots', 'xeno shield')" />
 		</attributes>
@@ -157,7 +157,7 @@
 			<identifier value = "item.cloak.dragon" />
 			<title value = "Dragon Slayer" />
 			<description value = "Loot all dragon cloaks" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new PlayerLootedNumberOfItemsCondition(1, 'black dragon cloak', 'blue dragon cloak', 'bone dragon cloak')" />
 		</attributes>
