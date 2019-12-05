@@ -1,8 +1,11 @@
 package games.stendhal.server.core.rp.achievement;
 
 import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
 import org.junit.Test;
-import com.google.common.collect.ImmutableList;
+//import com.google.common.collect.ImmutableList;
 import games.stendhal.server.core.rp.achievement.AchievementNotifier;
 import games.stendhal.server.entity.player.Player;
 import utilities.PlayerTestHelper;
@@ -50,7 +53,7 @@ public class AchievmentNotifierTest {
 	public void getAchievementsTest()
 	{
 		AchievementNotifier instance4 = AchievementNotifier.get();
-		ImmutableList <Achievement> achievmentsList = instance4.getAchievements() ;
+		List <Achievement> achievmentsList = instance4.getAchievements() ;
 		assertEquals(instance4.getAchievements(),achievmentsList);
 		
 	}
