@@ -55,6 +55,16 @@ public class DefaultAchievement {
 		return description;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public Class<?> getImplementationClass() {
+		return getImplementationClass();
+	}
+	
+
+	
 //	public void setImplementation(final Class< ? > implementation) {
 //		this.implementation = implementation;
 //		creator = buildCreator(implementation);

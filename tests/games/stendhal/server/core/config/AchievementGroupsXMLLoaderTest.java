@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Collection;
+
 import java.util.List;
 
 import org.junit.After;
@@ -15,12 +15,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
-import games.stendhal.server.core.engine.SingletonRepository;
-import games.stendhal.server.core.engine.StendhalRPZone;
+
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
-import games.stendhal.server.core.rule.defaultruleset.DefaultSpell;
+
 import games.stendhal.server.maps.MockStendlRPWorld;
-import marauroa.common.game.IRPZone;
+
 
 public class AchievementGroupsXMLLoaderTest {
 

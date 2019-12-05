@@ -403,4 +403,10 @@ public class DefaultEntityManager implements EntityManager {
 	public Collection<String> getConfiguredSpells() {
 		return nameToSpell.keySet();
 	}
+
+	@Override
+	public boolean addAchievement(DefaultAchievement ach) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
