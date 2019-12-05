@@ -183,6 +183,22 @@ Authors of Stendhal are:
   ·Buying House Furniture feature
   Dhruvi
   ·Buying House Furniture feature
+  
+  Non-functional:
+  Josie
+  · Create XML files
+  Chelsea
+  · Create XML files
+  Ziad
+  · Improve Test Coverage
+  Rares
+  · Improve Test Coverage
+  Vlad
+  · Make Java files use XML
+  Junyao
+  · Make Java files use XML
+  Dhruvi
+  · Make Java files use XML  
 
 We also thank many who have contributed to Stendhal by providing patches,
 which the rest of the team commited on their behalf. 

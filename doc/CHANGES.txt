@@ -1,4 +1,9 @@
 Changelog
+
+1.33 non-functional - migrate achievements to xml configuration
+
+---------
+
 1.32 implemented 4 new features: 
   ·Buying House Furniture feature
   ·Stealing pet feature
