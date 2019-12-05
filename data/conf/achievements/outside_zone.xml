@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	<achievement name="junior explorer">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.semos" />
+			<title value="Junior Explorer" />
+			<description value="Visit all outside zones in the Semos region"/>
+			<score value="Achievement.EASY_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('semos', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+
+	<achievement name="big city explorer">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.ados" />
+			<title value="Big City Explorer"/>
+			<description value="Visit all outside zones in the Ados region"/>
+			<score value="Achievement.EASY_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('ados', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="far south">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.fado" />
+			<title value="Far South" />
+			<description value="Visit all outside zones in the Fado region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('fado', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="scout">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.orril" />
+			<title value="Scout" />
+			<description value="Visit all outside zones in the Orril region"/>
+			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('orril', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="jungle explorer">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.amazon" />
+			<title value="Jungle Explorer" />
+			<description value="Visit all outside zones in the Amazon region"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('amazon', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="tourist">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.athor" />
+			<title value="Tourist" />
+			<description value="Visit all outside zones in the Athor region"/>
+			<score value="Achievement.EASY_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('athor', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="sky tower">
+	  	<type class="achievements" subclass="outside_zone" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.OutsideZoneAchievementFactory"/>
+		<attributes>
+			<identifier value="zone.outside.kikareukin" />
+			<title value="Sky Tower" />
+			<description value="Visit all outside zones in the Kikareukin region"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new PlayerVisitedZonesInRegionCondition('kikareukin', Boolean.TRUE, Boolean.TRUE)"/>
+		</attributes>
+	</achievement>
+
+</achievements>

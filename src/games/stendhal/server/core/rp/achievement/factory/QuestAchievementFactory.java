@@ -12,16 +12,22 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.core.rp.achievement.condition.QuestCountCompletedCondition;
-import games.stendhal.server.core.rp.achievement.condition.QuestsInRegionCompletedCondition;
-import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition;
-import games.stendhal.server.maps.Region;
+//import games.stendhal.server.core.rp.achievement.condition.QuestCountCompletedCondition;
+//import games.stendhal.server.core.rp.achievement.condition.QuestsInRegionCompletedCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition;
+//import games.stendhal.server.maps.Region;
 /**
  * Factory for quest achievements
  *
@@ -30,9 +36,11 @@ import games.stendhal.server.maps.Region;
 public class QuestAchievementFactory extends AbstractAchievementFactory {
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> questAchievements = new LinkedList<Achievement>();
-
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> questAchievements = new LinkedList<DefaultAchievement>();
+		//create loader instance
+		AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+/*
 		// Elf Princess quest achievement
 		questAchievements.add(createAchievement("quest.special.elf_princess.0025", "Faiumoni's Casanova", "Finish elf princess quest 25 times",
 												Achievement.MEDIUM_BASE_SCORE, true, new QuestStateGreaterThanCondition("elf_princess", 2, 24)));
@@ -63,7 +71,25 @@ public class QuestAchievementFactory extends AbstractAchievementFactory {
 		// complete nearly all the quests in the game?
 		questAchievements.add(createAchievement("quest.count.80", "Quest Junkie","Complete at least 80 quests",
 				Achievement.MEDIUM_BASE_SCORE, true, new QuestCountCompletedCondition(80)));
-
+*/
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/quest.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			questAchievements = xpLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list
 		return questAchievements;
 	}
 

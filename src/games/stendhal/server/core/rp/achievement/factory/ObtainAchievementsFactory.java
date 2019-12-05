@@ -1,14 +1,20 @@
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.condition.PlayerGotNumberOfItemsFromWellCondition;
-import games.stendhal.server.entity.npc.condition.PlayerHasHarvestedNumberOfItemsCondition;
-import games.stendhal.server.entity.npc.condition.QuestCompletedCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.PlayerGotNumberOfItemsFromWellCondition;
+//import games.stendhal.server.entity.npc.condition.PlayerHasHarvestedNumberOfItemsCondition;
+//import games.stendhal.server.entity.npc.condition.QuestCompletedCondition;
 
 /**
  * factory for obtaining items related achievements.
@@ -23,9 +29,11 @@ public class ObtainAchievementsFactory extends AbstractAchievementFactory {
 	}
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		final List<Achievement> achievements = new LinkedList<Achievement>();
-
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> achievements = new LinkedList<DefaultAchievement>();
+		//create loader instance
+		AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+/*
 		// Wishing well achievement
 		achievements.add(createAchievement("obtain.wish", "A wish came true", "Get an item from the wishing well",
 				Achievement.EASY_BASE_SCORE, true,
@@ -47,6 +55,26 @@ public class ObtainAchievementsFactory extends AbstractAchievementFactory {
 		achievements.add(createAchievement("quest.special.collector", "Ultimate Collector", "Finish ultimate collector quest",
 				Achievement.HARD_BASE_SCORE, true,
 				new QuestCompletedCondition("ultimate_collector")));
+		*/
+		
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/obtain.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			achievements = xpLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list
 
 		return achievements;
 	}

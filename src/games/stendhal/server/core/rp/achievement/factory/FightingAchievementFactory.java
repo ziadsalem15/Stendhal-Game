@@ -12,17 +12,18 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.core.rp.achievement.condition.KilledRareCreatureCondition;
-import games.stendhal.server.core.rp.achievement.condition.KilledSharedAllCreaturesCondition;
-import games.stendhal.server.core.rp.achievement.condition.KilledSoloAllCreaturesCondition;
-import games.stendhal.server.entity.npc.condition.AndCondition;
-import games.stendhal.server.entity.npc.condition.PlayerHasKilledNumberOfCreaturesCondition;
+
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 /**
  * Factory for fighting achievements
  *
@@ -31,8 +32,11 @@ import games.stendhal.server.entity.npc.condition.PlayerHasKilledNumberOfCreatur
 public class FightingAchievementFactory extends AbstractAchievementFactory {
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> fightingAchievements = new LinkedList<Achievement>();
+	public Collection<DefaultAchievement> createAchievements() {
+		AchievementsXMLLoader fightLoader = new AchievementsXMLLoader();
+		List<DefaultAchievement> fightingAchievements = new LinkedList<DefaultAchievement>();
+		
+		/*
 		fightingAchievements.add(createAchievement("fight.general.rats", "Rat Hunter", "Kill 15 rats", Achievement.EASY_BASE_SCORE, true,
 													new PlayerHasKilledNumberOfCreaturesCondition("rat", 15)));
 		fightingAchievements.add(createAchievement("fight.general.exterminator", "Exterminator", "Kill 10 rats of each kind", Achievement.MEDIUM_BASE_SCORE, true,
@@ -59,7 +63,29 @@ public class FightingAchievementFactory extends AbstractAchievementFactory {
 		fightingAchievements.add(createAchievement("fight.special.all", "Legend", "Kill all creatures solo", Achievement.HARD_BASE_SCORE, true,
 				new KilledSoloAllCreaturesCondition()));
 		fightingAchievements.add(createAchievement("fight.special.allshared", "Team Player", "Kill all creatures in a team", Achievement.HARD_BASE_SCORE, true,
-				new KilledSharedAllCreaturesCondition()));
+				new KilledSharedAllCreaturesCondition())); */
+		
+		//try to initialize variable achievementURI with the xml string
+		
+				URI achievementURI = null;
+				try {
+					achievementURI = new URI("achievements/fighting.xml");
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				//try to load the achievements list from the resource file
+				
+				try {
+					fightingAchievements = fightLoader.load(achievementURI);
+				} catch (SAXException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				//return achievements list
+		
 		return fightingAchievements;
 	}
 

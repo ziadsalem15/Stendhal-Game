@@ -14,6 +14,7 @@ package games.stendhal.server.core.rule;
 
 import java.util.Collection;
 
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 import games.stendhal.server.core.rule.defaultruleset.DefaultCreature;
 import games.stendhal.server.core.rule.defaultruleset.DefaultItem;
 import games.stendhal.server.core.rule.defaultruleset.DefaultSpell;
@@ -166,5 +167,7 @@ public interface EntityManager {
 	 * @return a collection of all available spells
 	 */
 	Collection<String> getConfiguredSpells();
+
+	boolean addAchievement(DefaultAchievement ach);
 
 }

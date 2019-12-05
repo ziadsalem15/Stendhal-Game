@@ -11,13 +11,19 @@
  ***************************************************************************/
 package games.stendhal.server.core.rp.achievement.factory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import org.xml.sax.SAXException;
+
+import games.stendhal.server.core.config.AchievementsXMLLoader;
+//import games.stendhal.server.core.rp.achievement.Achievement;
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.entity.npc.condition.PlayerLootedNumberOfItemsCondition;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
+//import games.stendhal.server.entity.npc.condition.PlayerLootedNumberOfItemsCondition;
 
 /**
  * Factory for item related achievements.
@@ -32,9 +38,11 @@ public class ItemAchievementFactory extends AbstractAchievementFactory {
 	}
 
 	@Override
-	public Collection<Achievement> createAchievements() {
-		List<Achievement> itemAchievements = new LinkedList<Achievement>();
-
+	public Collection<DefaultAchievement> createAchievements() {
+		List<DefaultAchievement> itemAchievements = new LinkedList<DefaultAchievement>();
+		//create loader instance
+				AchievementsXMLLoader xpLoader = new AchievementsXMLLoader();
+/*
 		itemAchievements.add(createAchievement("item.money.100", "First pocket money", "Loot 100 money from creatures",
 				Achievement.EASY_BASE_SCORE, true,
 				new PlayerLootedNumberOfItemsCondition(100, "money")));
@@ -92,7 +100,25 @@ public class ItemAchievementFactory extends AbstractAchievementFactory {
 				Achievement.MEDIUM_BASE_SCORE, true,
 				new PlayerLootedNumberOfItemsCondition(1, "black dragon cloak", "blue dragon cloak", "bone dragon cloak",
 						"green dragon cloak", "red dragon cloak")));
-
+*/
+		URI achievementURI = null;
+		try {
+			achievementURI = new URI("achievements/item.xml");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//try to load the achievements list from the resource file
+		
+		try {
+			itemAchievements = xpLoader.load(achievementURI);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return achievements list
 		return itemAchievements;
 	}
 
