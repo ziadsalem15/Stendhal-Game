@@ -325,7 +325,7 @@ public final class AchievementNotifier {
 	 * @param achievementsToNotifyAbout list of achievements the player should
 	 * 	be notified about
 	 */
-	private void notifyPlayerAboutReachedAchievements(Player player, List<Achievement> achievementsToNotifyAbout) {
+	public void notifyPlayerAboutReachedAchievements(Player player, List<Achievement> achievementsToNotifyAbout) {
 		for (Achievement achievement : achievementsToNotifyAbout) {
 			notifyPlayerAboutReachedAchievement(player, achievement);
 		}
@@ -337,7 +337,7 @@ public final class AchievementNotifier {
 	 * @param player
 	 * @param achievement
 	 */
-	private void logReachingOfAnAchievement(Player player, Achievement achievement) {
+	public void logReachingOfAnAchievement(Player player, Achievement achievement) {
 		String identifier = achievement.getIdentifier();
 		String title = achievement.getTitle();
 		Category category = achievement.getCategory();
@@ -353,7 +353,7 @@ public final class AchievementNotifier {
 	 * @param player
 	 * @param achievement
 	 */
-	private void notifyPlayerAboutReachedAchievement(Player player, Achievement achievement) {
+	public void notifyPlayerAboutReachedAchievement(Player player, Achievement achievement) {
 		if (achievement.isActive()) {
 			player.addEvent(new ReachedAchievementEvent(achievement));
 			player.addEvent(new SoundEvent("yay-1", SoundLayer.USER_INTERFACE));
