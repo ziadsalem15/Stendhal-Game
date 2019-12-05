@@ -9,7 +9,7 @@
 			<identifier value="production.class.food"/>
 			<title value="Gourmet"/>
 			<description value="Order all food types available from Faiumoni's cooks"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new AndCondition(
 						new PlayerProducedNumberOfItemsCondition(1, foods),
@@ -24,7 +24,7 @@
 			<identifier value="production.class.drink"/>
 			<title value="Thirsty Worker"/>
 			<description value="Order all drink types available from Faiumoni's cooks"/>
-			<score value="Achievement.MEDIUM_BASE_SCORE"/>
+			<score value="2"/>
 			<active value="true"/>
 			<condition value="new AndCondition(
 						new PlayerProducedNumberOfItemsCondition(1, drinks),
@@ -41,7 +41,7 @@
 			<identifier value="production.class.resource"/>
 			<title value="Alchemist"/>
 			<description value="Produce 5 of each kind of precious metal and resource"/>
-			<score value="Achievement.HARD_BASE_SCORE"/>
+			<score value="5"/>
 			<active value="true"/>
 			<condition value="new PlayerProducedNumberOfItemsCondition(5, resources)"/>
 		</attributes>
@@ -54,7 +54,7 @@
 			<identifier value="production.flour.1000"/>
 			<title value="Jenny's Assistant"/>
 			<description value="Produce 1000 flour"/>
-			<score value="Achievement.EASY_BASE_SCORE"/>
+			<score value="1"/>
 			<active value="true"/>
 			<condition value="new PlayerProducedNumberOfItemsCondition(1000, 'flour')"/>
 		</attributes>

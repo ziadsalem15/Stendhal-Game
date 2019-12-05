@@ -9,7 +9,7 @@
 			<identifier value = "friend.quests.children" />
 			<title value = "Childrens' friend" />
 			<description value = "Complete quests for all children" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new AndCondition(
 						new QuestStartedCondition('susi'),
@@ -32,7 +32,7 @@
 			<identifier value = "friend.quests.find" />
 			<title value = "Private Detective" />
 			<description value = "Find all lost and hidden people" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new AndCondition(
 						new QuestCompletedCondition('find_rat_kids'),
@@ -59,7 +59,7 @@
 			<identifier value = "friend.karma.250" />
 			<title value = "Good Samaritan" />
 			<description value = "Earn a very good karma" />
-			<score value = "Achievement.MEDIUM_BASE_SCORE" />
+			<score value = "2" />
 			<active value = "true" />
 			<condition value = "new ChatCondition() {
 				@Override
@@ -77,7 +77,7 @@
 			<identifier value = "friend.meet.seasonal" />
 			<title value = "Still Believing" />
 			<description value = "Meet Santa Claus and Easter Bunny" />
-			<score value = "Achievement.EASY_BASE_SCORE" />
+			<score value = "1" />
 			<active value = "true" />
 			<condition value = "new AndCondition(new QuestWithPrefixCompletedCondition('meet_santa_'), new QuestWithPrefixCompletedCondition('meet_bunny_'))" />
 		</attributes>

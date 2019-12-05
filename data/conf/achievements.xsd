@@ -5,7 +5,7 @@
 
 	<element name="achievements" type="Q1:achievementsGroup"></element>
 
-	<complexType name="achievmentsGroup">
+	<complexType name="achievementsGroup">
 		<sequence>
 			<element name="achievement" type="Q1:achievementType" minOccurs="0"
 				maxOccurs="unbounded"></element>
