@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+	<achievement name="Archaeologist">
+	  	<type class="achievements" subclass="quest_kirdneh_item" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.KirdnehItemAchievementFactory"/>
+		<attributes>
+			<identifier value="quest.special.weekly_item.0005"/>
+			<title value="Archaeologist"/>
+			<description value="Finish weekly item quest 5 times"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new QuestStateGreaterThanCondition('weekly_item', 2, 4)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="Dedicated Archaeologist">
+	  	<type class="achievements" subclass="quest_kirdneh_item" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.KirdnehItemAchievementFactory"/>
+		<attributes>
+			<identifier value="quest.special.weekly_item.0025"/>
+			<title value="Dedicated Archaeologist"/>
+			<description value="Finish weekly item quest 25 times"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new QuestStateGreaterThanCondition('weekly_item', 2, 24)"/>
+		</attributes>
+	</achievement>
+	
+	<achievement name="Senior Archaeologist">
+	  	<type class="achievements" subclass="quest_kirdneh_item" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.KirdnehItemAchievementFactory"/>
+		<attributes>
+			<identifier value="quest.special.weekly_item.0050"/>
+			<title value="Senior Archaeologist"/>
+			<description value="Finish weekly item quest 50 times"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new QuestStateGreaterThanCondition('weekly_item', 2, 49"/>
+		</attributes>
+	</achievement>
+
+	<achievement name="Master Archaeologist">
+	  	<type class="achievements" subclass="quest_kirdneh_item" tileid="-1"/>
+		<implementation class-name="games.stendhal.server.entity.core.rp.achievement.factory.KirdnehItemAchievementFactory"/>
+		<attributes>
+			<identifier value="quest.special.weekly_item.0100"/>
+			<title value="Master Archaeologist"/>
+			<description value="Finish weekly item quest 100 times"/>
+			<score value="Achievement.HARD_BASE_SCORE"/>
+			<active value="true"/>
+			<condition value="new QuestStateGreaterThanCondition('weekly_item', 2, 99"/>
+		</attributes>
+	</achievement>
+</achievements>
+	
