@@ -10,7 +10,7 @@ import org.junit.Test;
 import games.stendhal.server.entity.npc.condition.QuestStateGreaterThanCondition;
 
 
-public class AchivementTest {
+public class AchievementTest {
     
 	Category c =  Category.EXPERIENCE;
 	Achievement a = new Achievement("some identifier", "some title", c, "some description", 
